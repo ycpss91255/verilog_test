@@ -1,6 +1,6 @@
 Analysis & Synthesis report for DE0_TOP
-Sun Oct 17 23:58:27 2021
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Oct 25 01:36:31 2021
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -17,11 +17,12 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   9. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst0
  10. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst1
  11. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst2
- 12. Port Connectivity Checks: "button_debouncer:button_debouncer_inst2"
- 13. Port Connectivity Checks: "button_debouncer:button_debouncer_inst1"
- 14. Port Connectivity Checks: "button_debouncer:button_debouncer_inst0"
- 15. Elapsed Time Per Partition
- 16. Analysis & Synthesis Messages
+ 12. Port Connectivity Checks: "Decoder:DL1"
+ 13. Port Connectivity Checks: "button_debouncer:button_debouncer_inst2"
+ 14. Port Connectivity Checks: "button_debouncer:button_debouncer_inst1"
+ 15. Port Connectivity Checks: "button_debouncer:button_debouncer_inst0"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
 
 
 
@@ -47,15 +48,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 17 23:58:27 2021           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Analysis & Synthesis Status        ; Successful - Mon Oct 25 01:36:31 2021           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 56                                              ;
-;     Total combinational functions  ; 52                                              ;
-;     Dedicated logic registers      ; 30                                              ;
-; Total registers                    ; 30                                              ;
+; Total logic elements               ; 83                                              ;
+;     Total combinational functions  ; 79                                              ;
+;     Dedicated logic registers      ; 52                                              ;
+; Total registers                    ; 52                                              ;
 ; Total pins                         ; 252                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -151,15 +152,21 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 
 
-Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
-+-------------------------------------+
-; Parallel Compilation                ;
-+----------------------------+--------+
-; Processors                 ; Number ;
-+----------------------------+--------+
-; Number detected on machine ; 8      ;
-; Maximum allowed            ; 1      ;
-+----------------------------+--------+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-12        ;   0.0%      ;
++----------------------------+-------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+
@@ -167,9 +174,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                   ; Library ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
-; de0_top.v                        ; yes             ; Auto-Found Verilog HDL File  ; D:/DE0_Debounce/DE0_TOP_New/de0_top.v          ;         ;
-; button_debouncer.v               ; yes             ; Auto-Found Verilog HDL File  ; D:/DE0_Debounce/DE0_TOP_New/button_debouncer.v ;         ;
-; led.v                            ; yes             ; Auto-Found Verilog HDL File  ; D:/DE0_Debounce/DE0_TOP_New/led.v              ;         ;
+; de0_top.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/de0_top.v          ;         ;
+; button_debouncer.v               ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/button_debouncer.v ;         ;
+; divisor.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/divisor.v          ;         ;
+; decoder.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/decoder.v          ;         ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
 
 
@@ -178,28 +186,28 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 56             ;
+; Estimated Total logic elements              ; 83             ;
 ;                                             ;                ;
-; Total combinational functions               ; 52             ;
+; Total combinational functions               ; 79             ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 25             ;
-;     -- 3 input functions                    ; 3              ;
-;     -- <=2 input functions                  ; 24             ;
+;     -- 4 input functions                    ; 27             ;
+;     -- 3 input functions                    ; 5              ;
+;     -- <=2 input functions                  ; 47             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 32             ;
-;     -- arithmetic mode                      ; 20             ;
+;     -- normal mode                          ; 35             ;
+;     -- arithmetic mode                      ; 44             ;
 ;                                             ;                ;
-; Total registers                             ; 30             ;
-;     -- Dedicated logic registers            ; 30             ;
+; Total registers                             ; 52             ;
+;     -- Dedicated logic registers            ; 52             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 252            ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 30             ;
-; Total fan-out                               ; 584            ;
-; Average fan-out                             ; 0.84           ;
+; Maximum fan-out                             ; 52             ;
+; Total fan-out                               ; 742            ;
+; Average fan-out                             ; 0.99           ;
 +---------------------------------------------+----------------+
 
 
@@ -208,9 +216,10 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |DE0_TOP                                     ; 52 (1)            ; 30 (1)       ; 0           ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                         ; work         ;
-;    |LED:U1|                                  ; 7 (7)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|LED:U1                                  ; work         ;
+; |DE0_TOP                                     ; 79 (0)            ; 52 (0)       ; 0           ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                         ; work         ;
+;    |Decoder:DL1|                             ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|Decoder:DL1                             ; work         ;
 ;    |button_debouncer:button_debouncer_inst0| ; 44 (44)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst0 ; work         ;
+;    |divisor:clk_gen|                         ; 33 (33)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:clk_gen                         ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -220,10 +229,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 30    ;
-; Number of registers using Synchronous Clear  ; 0     ;
+; Total registers                              ; 52    ;
+; Number of registers using Synchronous Clear  ; 25    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 1     ;
+; Number of registers using Asynchronous Clear ; 26    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -261,6 +270,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; counter_max    ; 100000 ; Signed Integer                                             ;
 +----------------+--------+------------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Decoder:DL1"                                                                                                                                                                     ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                           ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; A    ; Input ; Warning  ; Input port expression (10 bits) is wider than the input port (3 bits) it drives.  The 7 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -305,21 +323,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
-Info: Running Quartus II 64-Bit Analysis & Synthesis
+Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Oct 17 23:58:23 2021
+    Info: Processing started: Mon Oct 25 01:36:29 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
-Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Warning (12125): Using design file de0_top.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: DE0_TOP
-Warning (10236): Verilog HDL Implicit Net warning at de0_top.v(249): created implicit net for "clk"
-Warning (10236): Verilog HDL Implicit Net warning at de0_top.v(250): created implicit net for "rstn"
+Warning (10236): Verilog HDL Implicit Net warning at de0_top.v(246): created implicit net for "rstn"
+Warning (10236): Verilog HDL Implicit Net warning at de0_top.v(256): created implicit net for "clk"
 Info (12127): Elaborating entity "DE0_TOP" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at de0_top.v(256): object "clk" assigned a value but never read
 Warning (10034): Output port "HEX0_D" at de0_top.v(133) has no driver
 Warning (10034): Output port "HEX1_D" at de0_top.v(135) has no driver
 Warning (10034): Output port "HEX2_D" at de0_top.v(137) has no driver
 Warning (10034): Output port "HEX3_D" at de0_top.v(139) has no driver
-Warning (10034): Output port "LEDG[6..1]" at de0_top.v(142) has no driver
+Warning (10034): Output port "LEDG[8]" at de0_top.v(142) has no driver
 Warning (10034): Output port "DRAM_ADDR" at de0_top.v(150) has no driver
 Warning (10034): Output port "FL_ADDR" at de0_top.v(164) has no driver
 Warning (10034): Output port "VGA_R" at de0_top.v(192) has no driver
@@ -363,10 +382,22 @@ Warning (10230): Verilog HDL assignment warning at button_debouncer.v(78): trunc
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(79): truncated value with size 32 to match size of target (21)
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(88): truncated value with size 32 to match size of target (21)
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(90): truncated value with size 32 to match size of target (21)
-Warning (12125): Using design file led.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: LED
-Info (12128): Elaborating entity "LED" for hierarchy "LED:U1"
-Info (10264): Verilog HDL Case Statement information at led.v(9): all case item expressions in this case statement are onehot
+Warning (12125): Using design file divisor.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: divisor
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:clk_gen"
+Warning (10230): Verilog HDL assignment warning at divisor.v(18): truncated value with size 32 to match size of target (25)
+Warning (12125): Using design file decoder.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: Decoder
+Info (12128): Elaborating entity "Decoder" for hierarchy "Decoder:DL1"
+Warning (10230): Verilog HDL assignment warning at decoder.v(7): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(8): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(9): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(10): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(11): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(12): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(13): truncated value with size 32 to match size of target (1)
+Warning (10230): Verilog HDL assignment warning at decoder.v(14): truncated value with size 32 to match size of target (1)
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "DRAM_DQ[0]" has no driver
     Warning (13040): Bidir "DRAM_DQ[1]" has no driver
@@ -512,12 +543,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3_D[5]" is stuck at GND
     Warning (13410): Pin "HEX3_D[6]" is stuck at GND
     Warning (13410): Pin "HEX3_DP" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
-    Warning (13410): Pin "LEDG[3]" is stuck at GND
-    Warning (13410): Pin "LEDG[4]" is stuck at GND
-    Warning (13410): Pin "LEDG[5]" is stuck at GND
-    Warning (13410): Pin "LEDG[6]" is stuck at GND
+    Warning (13410): Pin "LEDG[8]" is stuck at GND
     Warning (13410): Pin "UART_TXD" is stuck at GND
     Warning (13410): Pin "UART_CTS" is stuck at GND
     Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
@@ -597,15 +623,17 @@ Warning (13024): Output pins are stuck at VCC or GND
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 16 input pin(s) that do not drive logic
+Warning (21074): Design contains 18 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50_2"
     Warning (15610): No output dependent on input pin "ORG_BUTTON[1]"
     Warning (15610): No output dependent on input pin "ORG_BUTTON[2]"
-    Warning (15610): No output dependent on input pin "SW[2]"
     Warning (15610): No output dependent on input pin "SW[3]"
     Warning (15610): No output dependent on input pin "SW[4]"
     Warning (15610): No output dependent on input pin "SW[5]"
     Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "UART_RXD"
     Warning (15610): No output dependent on input pin "UART_RTS"
     Warning (15610): No output dependent on input pin "FL_RY"
@@ -614,15 +642,15 @@ Warning (21074): Design contains 16 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO0_CLKIN[1]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[0]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[1]"
-Info (21057): Implemented 308 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 335 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 118 output pins
     Info (21060): Implemented 111 bidirectional pins
-    Info (21061): Implemented 56 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 295 warnings
-    Info: Peak virtual memory: 4594 megabytes
-    Info: Processing ended: Sun Oct 17 23:58:27 2021
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info (21061): Implemented 83 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 303 warnings
+    Info: Peak virtual memory: 401 megabytes
+    Info: Processing ended: Mon Oct 25 01:36:31 2021
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 

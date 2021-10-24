@@ -1,0 +1,14 @@
+toplevel: ""
+name: verilog_test
+files: 
+  []
+tool_options: 
+  ghdl: 
+    installation_path: ""
+    waveform: vcd
+    analyze_options: 
+      - "--ieee=synopsys"
+    run_options: 
+      - ""
+    linter_options: 
+      - ""

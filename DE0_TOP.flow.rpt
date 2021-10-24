@@ -1,6 +1,6 @@
 Flow report for DE0_TOP
-Sun Oct 17 23:58:48 2021
-Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+Mon Oct 25 01:36:51 2021
+Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
 ---------------------
@@ -40,17 +40,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun Oct 17 23:58:43 2021           ;
-; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Flow Status                        ; Successful - Mon Oct 25 01:36:46 2021           ;
+; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 56 / 15,408 ( < 1 % )                           ;
-;     Total combinational functions  ; 52 / 15,408 ( < 1 % )                           ;
-;     Dedicated logic registers      ; 30 / 15,408 ( < 1 % )                           ;
-; Total registers                    ; 30                                              ;
+; Total logic elements               ; 83 / 15,408 ( < 1 % )                           ;
+;     Total combinational functions  ; 79 / 15,408 ( < 1 % )                           ;
+;     Dedicated logic registers      ; 52 / 15,408 ( < 1 % )                           ;
+; Total registers                    ; 52                                              ;
 ; Total pins                         ; 252 / 347 ( 73 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0 / 516,096 ( 0 % )                             ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/17/2021 23:58:26 ;
+; Start date & time ; 10/25/2021 01:36:30 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_TOP             ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                                    ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 57715612684977.163448630616716                           ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 929349058289.163509698920148                             ; --            ; --          ; --         ;
 ; ENABLE_ADVANCED_IO_TIMING           ; On                                                       ; --            ; --          ; --         ;
 ; MISC_FILE                           ; D:/TERASIC_TEST/DE0/DE0_TOP/DE0_TOP.dpf                  ; --            ; --          ; --         ;
 ; MISC_FILE                           ; E:/DE0/DE0_TOP/DE0_TOP.dpf                               ; --            ; --          ; --         ;
@@ -93,11 +93,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:04     ; 1.0                     ; 4583 MB             ; 00:00:04                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 4952 MB             ; 00:00:10                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4565 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:05     ; 1.0                     ; 4613 MB             ; 00:00:05                           ;
-; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:23                           ;
+; Analysis & Synthesis      ; 00:00:02     ; 1.0                     ; 401 MB              ; 00:00:02                           ;
+; Fitter                    ; 00:00:11     ; 1.5                     ; 683 MB              ; 00:00:13                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 364 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 409 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:17     ; --                      ; --                  ; 00:00:20                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -106,10 +106,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; 14Z90N-V         ; Windows 7 ; 6.2        ; x86_64         ;
-; Fitter                    ; 14Z90N-V         ; Windows 7 ; 6.2        ; x86_64         ;
-; Assembler                 ; 14Z90N-V         ; Windows 7 ; 6.2        ; x86_64         ;
-; TimeQuest Timing Analyzer ; 14Z90N-V         ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; GP65             ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; GP65             ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; GP65             ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; GP65             ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
