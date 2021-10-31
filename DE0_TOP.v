@@ -203,9 +203,10 @@ module DE0_TOP
   //=======================================================
   //  REG/WIRE declarations
   //=======================================================
-	wire			[2:0]	BUTTON;
-  wire            rst_n;
-  // wire            clk;
+  wire       [2:0] BUTTON;
+  wire             rst_n;
+  wire             clk;
+  wire       [3:0] num;
   //=======================================================
   //  Button Debounce Circit
   //=======================================================
@@ -233,19 +234,29 @@ module DE0_TOP
                      .data_in(ORG_BUTTON[2]),
                      .data_out(BUTTON[2])
                    );
-
-  // LED U1(
-  //       .iCLK(CLOCK_50),
-  //       .iSW(SW[9:7]),
-  //       .oLED(LEDG[9:7])
-  //     );
+  // create 1Hz clock
   divisor clk_gen(
-          .iClk(CLOCK_50),
-          .iRst_n(rst_n),
-          .oClk(LEDG[9]));
-
+            .iClk(CLOCK_50),
+            .iRst_n(rst_n),
+            .oClk(clk));
+  // num counter
+  count_num create_num_1(
+              .iClk(clk),
+              .iRst_n(rst_n),
+              .oNum(num)
+            );
+  // count_ID create_ID_1(
+  //             .iClk(clk),
+  //             .iRst_n(rst_n),
+  //             .oNum(num)
+  // );
+  HEX_decoder H_de1(
+                .iNum(num),
+                .oNum(HEX0_D)
+              );
   //=======================================================
   //  Structural coding
   //=======================================================
   assign rst_n = BUTTON[0];
+  assign LEDG[0] = clk;
 endmodule

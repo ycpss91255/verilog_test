@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_TOP
-Sun Oct 31 12:56:23 2021
+Sun Oct 31 17:21:22 2021
 Quartus II 32-bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -47,15 +47,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Oct 31 12:56:23 2021           ;
+; Analysis & Synthesis Status        ; Successful - Sun Oct 31 17:21:22 2021           ;
 ; Quartus II 32-bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 81                                              ;
-;     Total combinational functions  ; 77                                              ;
-;     Dedicated logic registers      ; 52                                              ;
-; Total registers                    ; 52                                              ;
+; Total logic elements               ; 92                                              ;
+;     Total combinational functions  ; 88                                              ;
+;     Dedicated logic registers      ; 56                                              ;
+; Total registers                    ; 56                                              ;
 ; Total pins                         ; 252                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
@@ -160,11 +160,12 @@ applicable agreement for further details.
 ; Maximum allowed            ; 6           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -176,6 +177,8 @@ applicable agreement for further details.
 ; de0_top.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/de0_top.v          ;         ;
 ; button_debouncer.v               ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/button_debouncer.v ;         ;
 ; divisor.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/divisor.v          ;         ;
+; count_num.v                      ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/count_num.v        ;         ;
+; hex_decoder.v                    ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/verilog_test/hex_decoder.v      ;         ;
 +----------------------------------+-----------------+------------------------------+------------------------------------------------+---------+
 
 
@@ -184,28 +187,28 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 81             ;
+; Estimated Total logic elements              ; 92             ;
 ;                                             ;                ;
-; Total combinational functions               ; 77             ;
+; Total combinational functions               ; 88             ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 27             ;
-;     -- 3 input functions                    ; 3              ;
+;     -- 4 input functions                    ; 37             ;
+;     -- 3 input functions                    ; 4              ;
 ;     -- <=2 input functions                  ; 47             ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 33             ;
+;     -- normal mode                          ; 44             ;
 ;     -- arithmetic mode                      ; 44             ;
 ;                                             ;                ;
-; Total registers                             ; 52             ;
-;     -- Dedicated logic registers            ; 52             ;
+; Total registers                             ; 56             ;
+;     -- Dedicated logic registers            ; 56             ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 252            ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 52             ;
-; Total fan-out                               ; 728            ;
-; Average fan-out                             ; 0.98           ;
+; Total fan-out                               ; 790            ;
+; Average fan-out                             ; 1.04           ;
 +---------------------------------------------+----------------+
 
 
@@ -214,8 +217,10 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
-; |DE0_TOP                                     ; 77 (0)            ; 52 (0)       ; 0           ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                         ; work         ;
+; |DE0_TOP                                     ; 88 (0)            ; 56 (0)       ; 0           ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                         ; work         ;
+;    |HEX_decoder:H_de1|                       ; 7 (7)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|HEX_decoder:H_de1                       ; work         ;
 ;    |button_debouncer:button_debouncer_inst0| ; 44 (44)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst0 ; work         ;
+;    |count_num:create_num_1|                  ; 4 (4)             ; 4 (4)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|count_num:create_num_1                  ; work         ;
 ;    |divisor:clk_gen|                         ; 33 (33)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:clk_gen                         ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -226,10 +231,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 52    ;
+; Total registers                              ; 56    ;
 ; Number of registers using Synchronous Clear  ; 25    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 26    ;
+; Number of registers using Asynchronous Clear ; 30    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 0     ;
 ; Number of registers using Preset             ; 0     ;
@@ -313,17 +318,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 32-bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Oct 31 12:56:21 2021
+    Info: Processing started: Sun Oct 31 17:21:21 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
 Info (11104): Parallel Compilation has detected 12 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 6 of the 6 physical processors detected instead.
 Warning (12125): Using design file de0_top.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: DE0_TOP
 Info (12127): Elaborating entity "DE0_TOP" for the top level hierarchy
-Warning (10034): Output port "HEX0_D" at de0_top.v(133) has no driver
 Warning (10034): Output port "HEX1_D" at de0_top.v(135) has no driver
 Warning (10034): Output port "HEX2_D" at de0_top.v(137) has no driver
 Warning (10034): Output port "HEX3_D" at de0_top.v(139) has no driver
-Warning (10034): Output port "LEDG[8..0]" at de0_top.v(142) has no driver
+Warning (10034): Output port "LEDG[9..1]" at de0_top.v(142) has no driver
 Warning (10034): Output port "DRAM_ADDR" at de0_top.v(150) has no driver
 Warning (10034): Output port "FL_ADDR" at de0_top.v(164) has no driver
 Warning (10034): Output port "VGA_R" at de0_top.v(192) has no driver
@@ -371,6 +375,13 @@ Warning (12125): Using design file divisor.v, which is not specified as a design
     Info (12023): Found entity 1: divisor
 Info (12128): Elaborating entity "divisor" for hierarchy "divisor:clk_gen"
 Warning (10230): Verilog HDL assignment warning at divisor.v(19): truncated value with size 32 to match size of target (25)
+Warning (12125): Using design file count_num.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: count_num
+Info (12128): Elaborating entity "count_num" for hierarchy "count_num:create_num_1"
+Warning (10230): Verilog HDL assignment warning at count_num.v(10): truncated value with size 32 to match size of target (4)
+Warning (12125): Using design file hex_decoder.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: HEX_decoder
+Info (12128): Elaborating entity "HEX_decoder" for hierarchy "HEX_decoder:H_de1"
 Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "DRAM_DQ[0]" has no driver
     Warning (13040): Bidir "DRAM_DQ[1]" has no driver
@@ -484,13 +495,6 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO1_D[30]" has no driver
     Warning (13040): Bidir "GPIO1_D[31]" has no driver
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0_D[0]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[1]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[2]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[3]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[4]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[5]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[6]" is stuck at GND
     Warning (13410): Pin "HEX0_DP" is stuck at GND
     Warning (13410): Pin "HEX1_D[0]" is stuck at GND
     Warning (13410): Pin "HEX1_D[1]" is stuck at GND
@@ -516,7 +520,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3_D[5]" is stuck at GND
     Warning (13410): Pin "HEX3_D[6]" is stuck at GND
     Warning (13410): Pin "HEX3_DP" is stuck at GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
     Warning (13410): Pin "LEDG[1]" is stuck at GND
     Warning (13410): Pin "LEDG[2]" is stuck at GND
     Warning (13410): Pin "LEDG[3]" is stuck at GND
@@ -525,6 +528,7 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LEDG[6]" is stuck at GND
     Warning (13410): Pin "LEDG[7]" is stuck at GND
     Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDG[9]" is stuck at GND
     Warning (13410): Pin "UART_TXD" is stuck at GND
     Warning (13410): Pin "UART_CTS" is stuck at GND
     Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
@@ -626,15 +630,15 @@ Warning (21074): Design contains 21 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO0_CLKIN[1]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[0]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[1]"
-Info (21057): Implemented 333 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 344 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 118 output pins
     Info (21060): Implemented 111 bidirectional pins
-    Info (21061): Implemented 81 logic cells
-Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 301 warnings
+    Info (21061): Implemented 92 logic cells
+Info: Quartus II 32-bit Analysis & Synthesis was successful. 0 errors, 296 warnings
     Info: Peak virtual memory: 391 megabytes
-    Info: Processing ended: Sun Oct 31 12:56:23 2021
-    Info: Elapsed time: 00:00:02
+    Info: Processing ended: Sun Oct 31 17:21:22 2021
+    Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:02
 
 
