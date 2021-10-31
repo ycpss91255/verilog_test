@@ -1,10 +1,9 @@
 module divisor (
-    input	 iClk,
-    input	 iRst_n,
-    output	reg oClk
+    input  wire iClk,
+    input  wire iRst_n,
+    output reg oClk
   );
-  reg   [24:0]  counter;
-
+  reg   [24:0]  counter = 25'h0;
   always @(posedge iClk or negedge iRst_n)
   begin
     if (!iRst_n)

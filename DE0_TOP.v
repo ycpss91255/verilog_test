@@ -203,10 +203,8 @@ module DE0_TOP
   //=======================================================
   //  REG/WIRE declarations
   //=======================================================
-  wire	[2:0]	BUTTON; // Button after debounce
-  reg     [9:0]   LEDG;
-  wire    [9:0]   SW;
-  // wire            retn;
+	wire			[2:0]	BUTTON;
+  wire            rst_n;
   // wire            clk;
   //=======================================================
   //  Button Debounce Circit
@@ -243,35 +241,11 @@ module DE0_TOP
   //     );
   divisor clk_gen(
           .iClk(CLOCK_50),
-          .iRst_n(rstn),
+          .iRst_n(rst_n),
           .oClk(LEDG[9]));
-  Decoder DL1(
-          .A(SW),
-          .G_n(rstn),
-          .D(LEDG[7:0])
-  );
+
   //=======================================================
   //  Structural coding
   //=======================================================
-  assign clk = CLOCK_50;
-  assign rstn = BUTTON[0];
-  // always @(posedge clk or negedge rstn)
-  // begin
-  //   if (!rstn)
-  //   begin
-  //     LEDG[0] <= 1'b0;
-  //   end
-  //   else
-  //   begin
-  //     if (SW[1] && SW[0])
-  //     begin
-  //       LEDG[0] <= SW[0];
-  //     end
-  //     else
-  //     begin
-  //       LEDG[0] <= 1'b0;
-  //     end
-  //   end
-  // end
-
+  assign rst_n = BUTTON[0];
 endmodule
