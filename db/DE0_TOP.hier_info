@@ -14,39 +14,39 @@ SW[6] => ~NO_FANOUT~
 SW[7] => ~NO_FANOUT~
 SW[8] => ~NO_FANOUT~
 SW[9] => ~NO_FANOUT~
-HEX0_D[0] <= HEX_decoder:H_de1.oNum
-HEX0_D[1] <= HEX_decoder:H_de1.oNum
-HEX0_D[2] <= HEX_decoder:H_de1.oNum
-HEX0_D[3] <= HEX_decoder:H_de1.oNum
-HEX0_D[4] <= HEX_decoder:H_de1.oNum
-HEX0_D[5] <= HEX_decoder:H_de1.oNum
-HEX0_D[6] <= HEX_decoder:H_de1.oNum
+HEX0_D[0] <= HEX_decoder:H_de3.oNum
+HEX0_D[1] <= HEX_decoder:H_de3.oNum
+HEX0_D[2] <= HEX_decoder:H_de3.oNum
+HEX0_D[3] <= HEX_decoder:H_de3.oNum
+HEX0_D[4] <= HEX_decoder:H_de3.oNum
+HEX0_D[5] <= HEX_decoder:H_de3.oNum
+HEX0_D[6] <= HEX_decoder:H_de3.oNum
 HEX0_DP <= <GND>
-HEX1_D[0] <= <GND>
-HEX1_D[1] <= <GND>
-HEX1_D[2] <= <GND>
-HEX1_D[3] <= <GND>
-HEX1_D[4] <= <GND>
-HEX1_D[5] <= <GND>
-HEX1_D[6] <= <GND>
+HEX1_D[0] <= HEX_decoder:H_de2.oNum
+HEX1_D[1] <= HEX_decoder:H_de2.oNum
+HEX1_D[2] <= HEX_decoder:H_de2.oNum
+HEX1_D[3] <= HEX_decoder:H_de2.oNum
+HEX1_D[4] <= HEX_decoder:H_de2.oNum
+HEX1_D[5] <= HEX_decoder:H_de2.oNum
+HEX1_D[6] <= HEX_decoder:H_de2.oNum
 HEX1_DP <= <GND>
-HEX2_D[0] <= <GND>
-HEX2_D[1] <= <GND>
-HEX2_D[2] <= <GND>
-HEX2_D[3] <= <GND>
-HEX2_D[4] <= <GND>
-HEX2_D[5] <= <GND>
-HEX2_D[6] <= <GND>
+HEX2_D[0] <= HEX_decoder:H_de1.oNum
+HEX2_D[1] <= HEX_decoder:H_de1.oNum
+HEX2_D[2] <= HEX_decoder:H_de1.oNum
+HEX2_D[3] <= HEX_decoder:H_de1.oNum
+HEX2_D[4] <= HEX_decoder:H_de1.oNum
+HEX2_D[5] <= HEX_decoder:H_de1.oNum
+HEX2_D[6] <= HEX_decoder:H_de1.oNum
 HEX2_DP <= <GND>
-HEX3_D[0] <= <GND>
-HEX3_D[1] <= <GND>
-HEX3_D[2] <= <GND>
-HEX3_D[3] <= <GND>
-HEX3_D[4] <= <GND>
-HEX3_D[5] <= <GND>
-HEX3_D[6] <= <GND>
+HEX3_D[0] <= HEX_decoder:H_de0.oNum
+HEX3_D[1] <= HEX_decoder:H_de0.oNum
+HEX3_D[2] <= HEX_decoder:H_de0.oNum
+HEX3_D[3] <= HEX_decoder:H_de0.oNum
+HEX3_D[4] <= HEX_decoder:H_de0.oNum
+HEX3_D[5] <= HEX_decoder:H_de0.oNum
+HEX3_D[6] <= HEX_decoder:H_de0.oNum
 HEX3_DP <= <GND>
-LEDG[0] <= clk.DB_MAX_OUTPUT_PORT_TYPE
+LEDG[0] <= wClk.DB_MAX_OUTPUT_PORT_TYPE
 LEDG[1] <= <GND>
 LEDG[2] <= <GND>
 LEDG[3] <= <GND>
@@ -480,7 +480,7 @@ iRst_n => counter[24].ACLR
 oClk <= oClk~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE0_TOP|count_num:create_num_1
+|DE0_TOP|count_ID:create_ID
 iClk => oNum[0]~reg0.CLK
 iClk => oNum[1]~reg0.CLK
 iClk => oNum[2]~reg0.CLK
@@ -495,13 +495,87 @@ oNum[2] <= oNum[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 oNum[3] <= oNum[3]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|DE0_TOP|HEX_decoder:H_de1
-iNum[0] => Decoder0.IN3
-iNum[1] => Decoder0.IN2
-iNum[2] => Decoder0.IN1
-iNum[3] => Decoder0.IN0
+|DE0_TOP|HEX_decoder:H_de0
+iNum[0] => LessThan0.IN8
+iNum[0] => Add0.IN8
+iNum[0] => tmp[0].DATAA
+iNum[1] => LessThan0.IN7
+iNum[1] => Add0.IN7
+iNum[1] => tmp[1].DATAA
+iNum[2] => LessThan0.IN6
+iNum[2] => Add0.IN6
+iNum[2] => tmp[2].DATAA
+iNum[3] => LessThan0.IN5
+iNum[3] => Add0.IN5
+iNum[3] => tmp[3].DATAA
 oNum[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
-oNum[1] <= data.DB_MAX_OUTPUT_PORT_TYPE
+oNum[1] <= <GND>
+oNum[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+oNum[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oNum[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oNum[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oNum[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE0_TOP|HEX_decoder:H_de1
+iNum[0] => LessThan0.IN8
+iNum[0] => Add0.IN8
+iNum[0] => tmp[0].DATAA
+iNum[1] => LessThan0.IN7
+iNum[1] => Add0.IN7
+iNum[1] => tmp[1].DATAA
+iNum[2] => LessThan0.IN6
+iNum[2] => Add0.IN6
+iNum[2] => tmp[2].DATAA
+iNum[3] => LessThan0.IN5
+iNum[3] => Add0.IN5
+iNum[3] => tmp[3].DATAA
+oNum[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oNum[1] <= <GND>
+oNum[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+oNum[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oNum[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oNum[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oNum[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE0_TOP|HEX_decoder:H_de2
+iNum[0] => LessThan0.IN8
+iNum[0] => Add0.IN8
+iNum[0] => tmp[0].DATAA
+iNum[1] => LessThan0.IN7
+iNum[1] => Add0.IN7
+iNum[1] => tmp[1].DATAA
+iNum[2] => LessThan0.IN6
+iNum[2] => Add0.IN6
+iNum[2] => tmp[2].DATAA
+iNum[3] => LessThan0.IN5
+iNum[3] => Add0.IN5
+iNum[3] => tmp[3].DATAA
+oNum[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oNum[1] <= <GND>
+oNum[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
+oNum[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+oNum[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+oNum[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+oNum[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|DE0_TOP|HEX_decoder:H_de3
+iNum[0] => LessThan0.IN8
+iNum[0] => Add0.IN8
+iNum[0] => tmp[0].DATAA
+iNum[1] => LessThan0.IN7
+iNum[1] => Add0.IN7
+iNum[1] => tmp[1].DATAA
+iNum[2] => LessThan0.IN6
+iNum[2] => Add0.IN6
+iNum[2] => tmp[2].DATAA
+iNum[3] => LessThan0.IN5
+iNum[3] => Add0.IN5
+iNum[3] => tmp[3].DATAA
+oNum[0] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+oNum[1] <= <GND>
 oNum[2] <= Decoder0.DB_MAX_OUTPUT_PORT_TYPE
 oNum[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
 oNum[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE

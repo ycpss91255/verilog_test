@@ -203,10 +203,10 @@ module DE0_TOP
   //=======================================================
   //  REG/WIRE declarations
   //=======================================================
-  wire       [2:0] BUTTON;
-  wire             rst_n;
-  wire             clk;
-  wire       [3:0] num;
+  wire       [2:0]      BUTTON;
+  wire                  wRst_n;
+  wire                  wClk;
+  wire       [3:0]      wNum;
   //=======================================================
   //  Button Debounce Circit
   //=======================================================
@@ -234,29 +234,38 @@ module DE0_TOP
                      .data_in(ORG_BUTTON[2]),
                      .data_out(BUTTON[2])
                    );
+
   // create 1Hz clock
   divisor clk_gen(
             .iClk(CLOCK_50),
-            .iRst_n(rst_n),
-            .oClk(clk));
-  // num counter
-  count_num create_num_1(
-              .iClk(clk),
-              .iRst_n(rst_n),
-              .oNum(num)
-            );
-  // count_ID create_ID_1(
-  //             .iClk(clk),
-  //             .iRst_n(rst_n),
-  //             .oNum(num)
-  // );
+            .iRst_n(wRst_n),
+            .oClk(wClk));
+
+  count_ID create_ID(
+             .iClk(wClk),
+             .iRst_n(wRst_n),
+             .oNum(wNum)
+           );
+
+  HEX_decoder H_de0(
+                .iNum(wNum),
+                .oNum(HEX3_D)
+              );
   HEX_decoder H_de1(
-                .iNum(num),
+                .iNum(wNum + 1),
+                .oNum(HEX2_D)
+              );
+  HEX_decoder H_de2(
+                .iNum(wNum + 2),
+                .oNum(HEX1_D)
+              );
+  HEX_decoder H_de3(
+                .iNum(wNum + 3),
                 .oNum(HEX0_D)
               );
   //=======================================================
   //  Structural coding
   //=======================================================
-  assign rst_n = BUTTON[0];
-  assign LEDG[0] = clk;
+  assign wRst_n = BUTTON[0];
+  assign LEDG[0] = wClk;
 endmodule
