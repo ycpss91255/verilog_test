@@ -14,7 +14,7 @@ module divisor (
     end
     else
     begin
-      if(counter < 25000000)
+      if(counter < 62500)
       begin	            //1 Hz除頻器
         counter  <= counter  +1;		//加法器
         oClk <= oClk ;	//閂鎖器

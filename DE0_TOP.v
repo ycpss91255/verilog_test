@@ -241,29 +241,34 @@ module DE0_TOP
             .iRst_n(wRst_n),
             .oClk(wClk));
 
-  count_ID create_ID(
-             .iClk(wClk),
-             .iRst_n(wRst_n),
-             .oNum(wNum)
-           );
+  PWM PWM_gen(
+            .iClk(wClk),
+            .iPWM(SW[9:2]),
+            .oPWM(LEDG[9:5])
+  );
+  // count_ID create_ID(
+  //            .iClk(wClk),
+  //            .iRst_n(wRst_n),
+  //            .oNum(wNum)
+  //          );
 
-  HEX_decoder H_de0(
-                .iNum(wNum),
-                .oNum(HEX3_D)
-              );
-  HEX_decoder H_de1(
-                .iNum(wNum + 1),
-                .oNum(HEX2_D)
-              );
-  HEX_decoder H_de2(
-                .iNum(wNum + 2),
-                .oNum(HEX1_D)
-              );
-  HEX_decoder H_de3(
-                .iNum(wNum + 3),
-                .oNum(HEX0_D)
-              );
-  //=======================================================
+  // HEX_decoder H_de0(
+  //               .iNum(wNum),
+  //               .oNum(HEX3_D)
+  //             );
+  // HEX_decoder H_de1(
+  //               .iNum(wNum + 1),
+  //               .oNum(HEX2_D)
+  //             );
+  // HEX_decoder H_de2(
+  //               .iNum(wNum + 2),
+  //               .oNum(HEX1_D)
+  //             );
+  // HEX_decoder H_de3(
+  //               .iNum(wNum + 3),
+  //               .oNum(HEX0_D)
+  //             );
+  // //=======================================================
   //  Structural coding
   //=======================================================
   assign wRst_n = BUTTON[0];
