@@ -49,14 +49,14 @@ module DE0Qsys_addr_router_002_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 3 
    )
-  (output [95 - 93 : 0] default_destination_id,
+  (output [76 - 74 : 0] default_destination_id,
    output [5-1 : 0] default_wr_channel,
    output [5-1 : 0] default_rd_channel,
    output [5-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[95 - 93 : 0];
+    DEFAULT_DESTID[76 - 74 : 0];
 
   generate begin : default_decode
     if (DEFAULT_CHANNEL == -1) begin
@@ -95,7 +95,7 @@ module DE0Qsys_addr_router_002
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [106-1 : 0]    sink_data,
+    input  [87-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -104,7 +104,7 @@ module DE0Qsys_addr_router_002
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [106-1    : 0] src_data,
+    output reg [87-1    : 0] src_data,
     output reg [5-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
@@ -114,18 +114,18 @@ module DE0Qsys_addr_router_002
     // -------------------------------------------------------
     // Local parameters and variables
     // -------------------------------------------------------
-    localparam PKT_ADDR_H = 61;
-    localparam PKT_ADDR_L = 36;
-    localparam PKT_DEST_ID_H = 95;
-    localparam PKT_DEST_ID_L = 93;
-    localparam PKT_PROTECTION_H = 99;
-    localparam PKT_PROTECTION_L = 97;
-    localparam ST_DATA_W = 106;
+    localparam PKT_ADDR_H = 43;
+    localparam PKT_ADDR_L = 18;
+    localparam PKT_DEST_ID_H = 76;
+    localparam PKT_DEST_ID_L = 74;
+    localparam PKT_PROTECTION_H = 80;
+    localparam PKT_PROTECTION_L = 78;
+    localparam ST_DATA_W = 87;
     localparam ST_CHANNEL_W = 5;
     localparam DECODER_TYPE = 0;
 
-    localparam PKT_TRANS_WRITE = 64;
-    localparam PKT_TRANS_READ  = 65;
+    localparam PKT_TRANS_WRITE = 46;
+    localparam PKT_TRANS_READ  = 47;
 
     localparam PKT_ADDR_W = PKT_ADDR_H-PKT_ADDR_L + 1;
     localparam PKT_DEST_ID_W = PKT_DEST_ID_H-PKT_DEST_ID_L + 1;
@@ -136,8 +136,7 @@ module DE0Qsys_addr_router_002
     // Figure out the number of bits to mask off for each slave span
     // during address decoding
     // -------------------------------------------------------
-    localparam PAD0 = log2ceil(64'h1000400 - 64'h1000000); 
-    localparam PAD1 = log2ceil(64'h3000000 - 64'h2800000); 
+    localparam PAD0 = log2ceil(64'h3000000 - 64'h2800000); 
     // -------------------------------------------------------
     // Work out which address bits are significant based on the
     // address range of the slaves. If the required width is too
@@ -150,9 +149,8 @@ module DE0Qsys_addr_router_002
                                         PKT_ADDR_H :
                                         PKT_ADDR_L + RANGE_ADDR_WIDTH - 1;
 
-    localparam RG = RANGE_ADDR_WIDTH-1;
+    localparam RG = RANGE_ADDR_WIDTH;
 
-      wire [PKT_ADDR_W-1 : 0] address = sink_data[OPTIMIZED_ADDR_H : PKT_ADDR_L];
 
     // -------------------------------------------------------
     // Pass almost everything through, untouched
@@ -185,18 +183,13 @@ module DE0Qsys_addr_router_002
         // Address Decoder
         // Sets the channel and destination ID based on the address
         // --------------------------------------------------
-
-    // ( 0x1000000 .. 0x1000400 )
-    if ( {address[RG:PAD0],{PAD0{1'b0}}} == 26'h1000000   ) begin
-            src_channel = 5'b10;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 0;
-    end
-
-    // ( 0x2800000 .. 0x3000000 )
-    if ( {address[RG:PAD1],{PAD1{1'b0}}} == 26'h2800000   ) begin
-            src_channel = 5'b01;
-            src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
-    end
+           
+         
+          // ( 2800000 .. 3000000 )
+          src_channel = 5'b1;
+          src_data[PKT_DEST_ID_H:PKT_DEST_ID_L] = 3;
+	     
+        
 
 end
 

@@ -49,14 +49,14 @@ module DE0Qsys_id_router_001_default_decode
                DEFAULT_RD_CHANNEL = -1,
                DEFAULT_DESTID = 3 
    )
-  (output [77 - 75 : 0] default_destination_id,
+  (output [76 - 74 : 0] default_destination_id,
    output [5-1 : 0] default_wr_channel,
    output [5-1 : 0] default_rd_channel,
    output [5-1 : 0] default_src_channel
   );
 
   assign default_destination_id = 
-    DEFAULT_DESTID[77 - 75 : 0];
+    DEFAULT_DESTID[76 - 74 : 0];
 
   generate begin : default_decode
     if (DEFAULT_CHANNEL == -1) begin
@@ -95,7 +95,7 @@ module DE0Qsys_id_router_001
     // Command Sink (Input)
     // -------------------
     input                       sink_valid,
-    input  [88-1 : 0]    sink_data,
+    input  [87-1 : 0]    sink_data,
     input                       sink_startofpacket,
     input                       sink_endofpacket,
     output                      sink_ready,
@@ -104,7 +104,7 @@ module DE0Qsys_id_router_001
     // Command Source (Output)
     // -------------------
     output                          src_valid,
-    output reg [88-1    : 0] src_data,
+    output reg [87-1    : 0] src_data,
     output reg [5-1 : 0] src_channel,
     output                          src_startofpacket,
     output                          src_endofpacket,
@@ -116,11 +116,11 @@ module DE0Qsys_id_router_001
     // -------------------------------------------------------
     localparam PKT_ADDR_H = 43;
     localparam PKT_ADDR_L = 18;
-    localparam PKT_DEST_ID_H = 77;
-    localparam PKT_DEST_ID_L = 75;
-    localparam PKT_PROTECTION_H = 81;
-    localparam PKT_PROTECTION_L = 79;
-    localparam ST_DATA_W = 88;
+    localparam PKT_DEST_ID_H = 76;
+    localparam PKT_DEST_ID_L = 74;
+    localparam PKT_PROTECTION_H = 80;
+    localparam PKT_PROTECTION_L = 78;
+    localparam ST_DATA_W = 87;
     localparam ST_CHANNEL_W = 5;
     localparam DECODER_TYPE = 1;
 
@@ -194,11 +194,11 @@ module DE0Qsys_id_router_001
             src_channel = 5'b0010;
         end
 
-        if (destid == 0 ) begin
+        if (destid == 1 ) begin
             src_channel = 5'b0100;
         end
 
-        if (destid == 1 ) begin
+        if (destid == 0 ) begin
             src_channel = 5'b1000;
         end
 
