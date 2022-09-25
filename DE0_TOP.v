@@ -246,7 +246,7 @@ button_debouncer	button_debouncer_inst2(
 /* work 2 */
 divisor #( .Threshold(12500000)
   )
-  divisor_1s (
+  divisor (
   .iClk(CLOCK_50),
   .iRst_n(BUTTON[0]),
   .oClk(wClk)

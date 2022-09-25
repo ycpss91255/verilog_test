@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_TOP
-Sun Sep 25 20:25:47 2022
+Sun Sep 25 20:38:42 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -20,7 +20,7 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
  12. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst0
  13. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst1
  14. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst2
- 15. Parameter Settings for User Entity Instance: divisor:divisor_1s
+ 15. Parameter Settings for User Entity Instance: divisor:divisor
  16. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
  17. Port Connectivity Checks: "button_debouncer:button_debouncer_inst2"
  18. Port Connectivity Checks: "button_debouncer:button_debouncer_inst1"
@@ -54,13 +54,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Sep 25 20:25:47 2022           ;
+; Analysis & Synthesis Status        ; Successful - Sun Sep 25 20:38:42 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 605                                             ;
-;     Total combinational functions  ; 451                                             ;
+; Total logic elements               ; 606                                             ;
+;     Total combinational functions  ; 452                                             ;
 ;     Dedicated logic registers      ; 431                                             ;
 ; Total registers                    ; 431                                             ;
 ; Total pins                         ; 252                                             ;
@@ -167,11 +167,12 @@ applicable agreement for further details.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-12        ;   0.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -238,16 +239,16 @@ applicable agreement for further details.
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 605                      ;
+; Estimated Total logic elements              ; 606                      ;
 ;                                             ;                          ;
-; Total combinational functions               ; 451                      ;
+; Total combinational functions               ; 452                      ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 180                      ;
-;     -- 3 input functions                    ; 104                      ;
+;     -- 4 input functions                    ; 189                      ;
+;     -- 3 input functions                    ; 96                       ;
 ;     -- <=2 input functions                  ; 167                      ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 349                      ;
+;     -- normal mode                          ; 350                      ;
 ;     -- arithmetic mode                      ; 102                      ;
 ;                                             ;                          ;
 ; Total registers                             ; 431                      ;
@@ -259,8 +260,8 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0                        ;
 ; Maximum fan-out node                        ; altera_internal_jtag~TDO ;
 ; Maximum fan-out                             ; 246                      ;
-; Total fan-out                               ; 3138                     ;
-; Average fan-out                             ; 2.08                     ;
+; Total fan-out                               ; 3151                     ;
+; Average fan-out                             ; 2.09                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -269,12 +270,12 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                          ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE0_TOP                                                                                                ; 451 (1)           ; 431 (0)      ; 1024        ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                                                                                                                                                                                                                                                                                                                     ; work         ;
-;    |LED:led_controller|                                                                                 ; 13 (13)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|LED:led_controller                                                                                                                                                                                                                                                                                                                  ; work         ;
+; |DE0_TOP                                                                                                ; 452 (1)           ; 431 (0)      ; 1024        ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                                                                                                                                                                                                                                                                                                                     ; work         ;
+;    |LED:led_controller|                                                                                 ; 12 (12)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|LED:led_controller                                                                                                                                                                                                                                                                                                                  ; work         ;
 ;    |button_debouncer:button_debouncer_inst0|                                                            ; 44 (44)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst0                                                                                                                                                                                                                                                                                             ; work         ;
-;    |divisor:divisor_1s|                                                                                 ; 46 (46)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:divisor_1s                                                                                                                                                                                                                                                                                                                  ; work         ;
-;    |sld_hub:auto_hub|                                                                                   ; 119 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                    ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 118 (80)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                       ; work         ;
+;    |divisor:divisor|                                                                                    ; 46 (46)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:divisor                                                                                                                                                                                                                                                                                                                     ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 121 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                    ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 120 (82)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                       ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                               ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                             ; work         ;
 ;    |sld_signaltap:auto_signaltap_0|                                                                     ; 228 (1)           ; 276 (2)      ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                      ; work         ;
@@ -332,7 +333,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Number of registers using Synchronous Load   ; 26    ;
 ; Number of registers using Asynchronous Clear ; 209   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 243   ;
+; Number of registers using Clock Enable       ; 244   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -342,7 +343,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 ; Inverted Register                                                                                                                                                              ; Fan out ;
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
-; LED:led_controller|status[0]                                                                                                                                                   ; 5       ;
+; LED:led_controller|status[0]                                                                                                                                                   ; 4       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|tdo                                                                                                              ; 1       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[2]                                                                                                   ; 2       ;
 ; sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|jtag_ir_reg[1]                                                                                                   ; 3       ;
@@ -362,19 +363,13 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE0_TOP|LED:led_controller|status[8]                                                                          ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
-; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
-; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                      ;
-; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output            ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
+; 3:1                ; 9 bits    ; 18 LEs        ; 9 LEs                ; 9 LEs                  ; Yes        ; |DE0_TOP|LED:led_controller|status[7] ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+---------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
@@ -410,13 +405,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: divisor:divisor_1s ;
-+----------------+----------+-------------------------------------+
-; Parameter Name ; Value    ; Type                                ;
-+----------------+----------+-------------------------------------+
-; Threshold      ; 12500000 ; Signed Integer                      ;
-+----------------+----------+-------------------------------------+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisor:divisor ;
++----------------+----------+----------------------------------+
+; Parameter Name ; Value    ; Type                             ;
++----------------+----------+----------------------------------+
+; Threshold      ; 12500000 ; Signed Integer                   ;
++----------------+----------+----------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -518,14 +513,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
-+---------------------------------+
-; Elapsed Time Per Partition      ;
-+------------------+--------------+
-; Partition Name   ; Elapsed Time ;
-+------------------+--------------+
-; Top              ; 00:00:00     ;
-; sld_hub:auto_hub ; 00:00:00     ;
-+------------------+--------------+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------+
@@ -545,7 +539,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Sep 25 20:25:43 2022
+    Info: Processing started: Sun Sep 25 20:38:38 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file led.v
@@ -602,8 +596,9 @@ Warning (10230): Verilog HDL assignment warning at button_debouncer.v(78): trunc
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(79): truncated value with size 32 to match size of target (21)
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(88): truncated value with size 32 to match size of target (21)
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(90): truncated value with size 32 to match size of target (21)
-Info (12128): Elaborating entity "divisor" for hierarchy "divisor:divisor_1s"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:divisor"
 Info (12128): Elaborating entity "LED" for hierarchy "LED:led_controller"
+Info (10264): Verilog HDL Case Statement information at LED.v(13): all case item expressions in this case statement are onehot
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_ds14.tdf
     Info (12023): Found entity 1: altsyncram_ds14
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_grc.tdf
@@ -845,11 +840,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GPIO1_CLKOUT[0]" is stuck at GND
     Warning (13410): Pin "GPIO1_CLKOUT[1]" is stuck at GND
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
-Info (13000): Registers with preset signals will power-up high
-Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
-Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 3 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
@@ -873,15 +863,15 @@ Warning (21074): Design contains 19 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO0_CLKIN[1]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[0]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[1]"
-Info (21057): Implemented 878 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 879 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 26 input pins
     Info (21059): Implemented 119 output pins
     Info (21060): Implemented 111 bidirectional pins
-    Info (21061): Implemented 620 logic cells
+    Info (21061): Implemented 621 logic cells
     Info (21064): Implemented 1 RAM segments
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 289 warnings
-    Info: Peak virtual memory: 4703 megabytes
-    Info: Processing ended: Sun Sep 25 20:25:47 2022
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 287 warnings
+    Info: Peak virtual memory: 4683 megabytes
+    Info: Processing ended: Sun Sep 25 20:38:42 2022
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:04
 
