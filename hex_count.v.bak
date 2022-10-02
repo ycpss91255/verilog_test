@@ -1,0 +1,14 @@
+module hex_count (
+  input            iClk,
+  input            iRst_n,
+  output reg [2:0] num
+);
+
+  always @ ( posedge iClk, negedge iRst_n ) begin
+    if ( !iRst_n )begin
+      num <= 3'b0;
+    end else begin
+      num <= num + 1;
+    end
+  end
+endmodule

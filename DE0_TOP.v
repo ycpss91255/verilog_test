@@ -139,7 +139,7 @@ output			HEX2_DP;				//	Seven Segment Digit DP 2
 output	[6:0]	HEX3_D;					//	Seven Segment Digit 3
 output			HEX3_DP;				//	Seven Segment Digit DP 3
 ////////////////////////////	LED		////////////////////////////
-output	[9:0]	LEDG;					//	LED Green[9:0]
+output 	[9:0]	LEDG;					//	LED Green[9:0]
 ////////////////////////////	UART	////////////////////////////
 output			UART_TXD;				//	UART Transmitter
 input			UART_RXD;				//	UART Receiver
@@ -205,6 +205,7 @@ inout	[31:0]	GPIO1_D;				//	GPIO Connection 1 Data Bus
 //=======================================================
 wire  [2:0] BUTTON; // Button after debounce
 wire wClk;
+wire [3:0] wDispaly_num;
 //=======================================================
 //  Button Debounce Circit 
 //=======================================================
@@ -251,12 +252,27 @@ divisor #( .Threshold(12500000)
   .iRst_n(BUTTON[0]),
   .oClk(wClk)
 );
-
-LED led_controller (
+//
+//LED led_controller (
+//  .iClk(wClk),
+//  .iRst_n(BUTTON[0]),
+//  .iSW(SW[1:0]),
+//  .oLED(LEDG[9:0])
+//);
+hex_count (
   .iClk(wClk),
   .iRst_n(BUTTON[0]),
-  .iSW(SW[1:0]),
-  .oLED(LEDG[9:0])
+  .oNum(wDispaly_num)
 );
+
+hex_num (
+  .iSW (wDispaly_num),
+  .oHEX(HEX0_D),
+  .oHEX_DP(HEX0_DP)
+);
+
+assign LEDG[0] = wClk;
+//  reg [3:0]test=4'b1101;
+//  assign LEDG[3:0]=test;
 
 endmodule
