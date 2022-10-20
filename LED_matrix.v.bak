@@ -1,0 +1,39 @@
+module LED_matrix(
+  input        iClk,
+  input  [2:0] iRow,
+  input  [2:0] iCol,
+  output [8:0] oLED
+)
+  reg    [8:0] LED_status = 9'b0;
+/*   Col
+     Pin 1 2 3
+  Row 1 |0|0|0|
+  Pin 2 |0|0|0|
+      3 |0|0|0|
+
+  Matrix[Row][Col]
+  Row = HIGH & Col = LOW => LED Bright
+
+  ex:
+    Input
+      Row Pin 1 = HIGH
+      Col Pin 1 = LOW
+    Output
+      LED Matrix[1][1] = Bright
+*/
+
+always @(iRow, iCol)begin
+  case ({iRow, iCol}):
+    6'b001_001: LED_status <= 9'b000_000_001;   // Matrix[0][0] = HIGH
+    6'b001_010: LED_status <= 9'b000_000_010;   // Matrix[0][1] = HIGH
+    6'b001_100: LED_status <= 9'b000_000_100;   // Matrix[0][2] = HIGH
+    6'b010_001: LED_status <= 9'b000_001_000;   // Matrix[1][0] = HIGH
+    6'b010_010: LED_status <= 9'b000_010_000;   // Matrix[1][1] = HIGH
+    6'b010_100: LED_status <= 9'b000_100_000;   // Matrix[1][2] = HIGH
+    6'b100_001: LED_status <= 9'b001_000_000;   // Matrix[2][0] = HIGH
+    6'b100_010: LED_status <= 9'b010_000_000;   // Matrix[2][1] = HIGH
+    6'b100_100: LED_status <= 9'b100_000_000;   // Matrix[2][2] = HIGH
+    default:    LED_status <= 9'b111_111_111;   // Matrix = all HIGH
+  endcase
+end
+endmodule
