@@ -1,18 +1,12 @@
-module LED_matrix #(
-  Row,
-  Col
-)(
-  input                       iClk,
-  input                       iRst_n,
-  input  [Col - 1 :0]         iRow,
-  input  [Row - 1 :0]         iCol
+module LED_matrix (
+  input         iClk,
+  input         iRst_n,
+  input  [4:0]  iRow,
+  input  [4:0]  iCol
 );
-  
-  localparam LED_size = Row * Col - 1;
-  localparam count_size = (Row % 2 != 0) ? Row / 2 : Row / 2 - 1;
-  
-  reg    [LED_size:0]         LED_status /*synthesis noprune*/;
-  reg    [count_size:0]       count /*synthesis noprune*/;
+
+  reg    [24:0] LED_status /*synthesis noprune*/;
+  reg    [2:0]  count /*synthesis noprune*/;
 
   /*   Col
        Pin  1   2   3   4   5
@@ -21,10 +15,8 @@ module LED_matrix #(
         3 | 0 | 0 | 0 | 0 | 0 |
         4 | 0 | 0 | 0 | 0 | 0 |
         5 | 0 | 0 | 0 | 0 | 0 |
-
     Matrix[Row][Col]
     Row = HIGH & Col = LOW => LED Bright
-
     ex:
       Input
         Row Pin 1 = HIGH
@@ -35,18 +27,13 @@ module LED_matrix #(
 
   always @(posedge iClk, negedge iRst_n)begin
     if (!iRst_n) begin
-      LED_status = 0;
-      count = 0;
+      LED_status <= 24'b0;
     end else begin
-      if (iRow == 0) begin
-        LED_status = 0;
-        count = 0;
-      end else begin
-        for (count = 0; count < Row; count = count + 1) begin
-          if (iRow[count]) LED_status = iCol << (count * Row);
-        end
-        count = 0;
-      end
+      LED_status[4:0]   <= (iRow[0]) ? ~iCol: 5'b0;
+      LED_status[9:5]   <= (iRow[1]) ? ~iCol: 5'b0;
+      LED_status[14:10] <= (iRow[2]) ? ~iCol: 5'b0;
+      LED_status[19:15] <= (iRow[3]) ? ~iCol: 5'b0;
+      LED_status[24:20] <= (iRow[4]) ? ~iCol: 5'b0;
     end
   end
 

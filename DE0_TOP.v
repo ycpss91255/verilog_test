@@ -277,24 +277,59 @@ button_debouncer	button_debouncer_inst2(
 
 
 /* work 4 */
-divisor #( .Threshold(500000)
-  )
-  time_0P02s (
-  .iClk(CLOCK_50),
-  .iRst_n(BUTTON[0]),
-  .oClk(wClk)
-);
+//divisor #( .Threshold(500000)
+//  )
+//  time_0P02s (
+//  .iClk(CLOCK_50),
+//  .iRst_n(BUTTON[0]),
+//  .oClk(wClk)
+//);
+//
+//LED_matrix matrix_5x5 (
+//  .iClk(wClk),
+//  .iRst_n(BUTTON[0]),
+//  .iRow(SW[4:0]),
+//  .iCol(SW[9:5]),
+//);
+//
+//assign LEDG[0] = wClk;
 
-LED_matrix #(
-  .Row(5),
-  .Col(5)
-  ) matrix_5x5 (
-  .iClk(wClk),
-  .iRst_n(BUTTON[0]),
-  .iRow(SW[4:0]),
-  .iCol(SW[9:5]),
-);
+/* midterm exam 01 */
+//divisor #( .Threshold(12500000)
+//  )
+//  time_0P5s (
+//  .iClk(CLOCK_50),
+//  .iRst_n(BUTTON[0]),
+//  .oClk(wClk)
+//);
+//
+//assign LEDG[3] = wClk;
 
-assign LEDG[0] = wClk;
+/* midterm exam 02 */
+//hex_num (
+//  .iSW(SW[3:0]),
+//  .oHEX(HEX0_D),
+//  .oHEX_DP(HEX0_DP)
+//  );
+  
+/* midterm exam 03 */
+//divisor #( .Threshold(12500000)
+//  )
+//  time_0P5s (
+//  .iClk(CLOCK_50),
+//  .iRst_n(BUTTON[0]),
+//  .oClk(wClk)
+//);
+//
+//LED_matrix matrix_5x5 (
+//  .iClk(BUTTON[2]),
+//  .iRst_n(BUTTON[0]),
+//  .iRow(SW[4:0]),
+//  .iCol(SW[9:5]),
+//);
 
+/* midterm exam 04 */
+
+/* midterm exam 05 */
+  
 endmodule
