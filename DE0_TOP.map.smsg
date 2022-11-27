@@ -1,2 +1,1 @@
 Warning (10268): Verilog HDL information at hex_count.v(9): always construct contains both blocking and non-blocking assignments
-Warning (10268): Verilog HDL information at hex_count_RL.v(10): always construct contains both blocking and non-blocking assignments

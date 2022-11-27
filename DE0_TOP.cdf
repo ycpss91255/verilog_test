@@ -4,7 +4,7 @@ JedecChain;
 	DefaultMfr(6E);
 
 	P ActionCode(Cfg)
-		Device PartName(EP3C16F484) Path("E:/source_code/robot_test/") File("DE0_TOP.sof") MfrSpec(OpMask(1));
+		Device PartName(EP3C16F484) Path("D:/source_code/verilog_test/") File("DE0_TOP.sof") MfrSpec(OpMask(1));
 
 ChainEnd;
 

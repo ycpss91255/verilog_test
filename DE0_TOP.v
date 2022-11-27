@@ -353,7 +353,7 @@ divisor #( .Threshold(12500000)
 divisor #( .Threshold(6250000)
   )
   time_4Hz (
-  .iClk(CLOCK_50),
+  .iClk(CLOCK_50),  
   .iRst_n(BUTTON[0]),
   .oClk(wClk_4hz)
 );
@@ -362,11 +362,14 @@ assign LEDG[1] = wClk_2hz;
 assign LEDG[2] = wClk_4hz;
 
 hex_count_RL hex_count_RL(
-  .iClk({wClk_1hz, wClk_2hz, wClk_4hz}),
-  .iSW(SW[2]),
+  .iClk({wClk_4hz, wClk_2hz, wClk_1hz}),
+  .iSW(SW[2:0]),
   .iRst_n(BUTTON[0]),
   .oNum(hex_num)
 );
+
+assign LEDG[9:6] = hex_num;
+
 hex_num dispaly_hex (
   .iSW(hex_num),
   .oHEX(HEX0_D),
