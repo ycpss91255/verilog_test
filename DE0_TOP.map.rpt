@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_TOP
-Thu Nov 03 18:20:33 2022
+Sun Nov 27 17:42:48 2022
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -14,25 +14,24 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edit
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis RAM Summary
-  9. Registers Protected by Synthesis
- 10. Registers Removed During Synthesis
- 11. General Register Statistics
- 12. Inverted Register Statistics
- 13. Source assignments for LED_matrix:matrix_5x5
- 14. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst0
- 15. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst1
- 16. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst2
- 17. Parameter Settings for User Entity Instance: divisor:time_0P5s
+  9. General Register Statistics
+ 10. Inverted Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst0
+ 13. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst1
+ 14. Parameter Settings for User Entity Instance: button_debouncer:button_debouncer_inst2
+ 15. Parameter Settings for User Entity Instance: divisor:time_1Hz
+ 16. Parameter Settings for User Entity Instance: divisor:time_2Hz
+ 17. Parameter Settings for User Entity Instance: divisor:time_4Hz
  18. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
- 19. Port Connectivity Checks: "divisor:time_0P5s"
- 20. Port Connectivity Checks: "button_debouncer:button_debouncer_inst2"
- 21. Port Connectivity Checks: "button_debouncer:button_debouncer_inst1"
- 22. Port Connectivity Checks: "button_debouncer:button_debouncer_inst0"
- 23. SignalTap II Logic Analyzer Settings
- 24. Elapsed Time Per Partition
- 25. Connections to In-System Debugging Instance "auto_signaltap_0"
- 26. Analysis & Synthesis Messages
- 27. Analysis & Synthesis Suppressed Messages
+ 19. Port Connectivity Checks: "button_debouncer:button_debouncer_inst2"
+ 20. Port Connectivity Checks: "button_debouncer:button_debouncer_inst1"
+ 21. Port Connectivity Checks: "button_debouncer:button_debouncer_inst0"
+ 22. SignalTap II Logic Analyzer Settings
+ 23. Elapsed Time Per Partition
+ 24. Connections to In-System Debugging Instance "auto_signaltap_0"
+ 25. Analysis & Synthesis Messages
+ 26. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -58,15 +57,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Nov 03 18:20:32 2022           ;
+; Analysis & Synthesis Status        ; Successful - Sun Nov 27 17:42:48 2022           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 1,075                                           ;
-;     Total combinational functions  ; 555                                             ;
-;     Dedicated logic registers      ; 856                                             ;
-; Total registers                    ; 856                                             ;
+; Total logic elements               ; 1,198                                           ;
+;     Total combinational functions  ; 685                                             ;
+;     Dedicated logic registers      ; 933                                             ;
+; Total registers                    ; 933                                             ;
 ; Total pins                         ; 252                                             ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 37,888                                          ;
@@ -171,12 +170,11 @@ applicable agreement for further details.
 ; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-12        ;   0.0%      ;
+;     Processors 2-12        ;   0.0%      ;
 +----------------------------+-------------+
 
 
@@ -186,7 +184,8 @@ applicable agreement for further details.
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                   ; Library ;
 +----------------------------------+-----------------+------------------------------+--------------------------------------------------------------------------------+---------+
 ; divisor.v                        ; yes             ; User Verilog HDL File        ; E:/source_code/robot_test/divisor.v                                            ;         ;
-; LED_matrix.v                     ; yes             ; User Verilog HDL File        ; E:/source_code/robot_test/LED_matrix.v                                         ;         ;
+; HEX_num.v                        ; yes             ; User Verilog HDL File        ; E:/source_code/robot_test/HEX_num.v                                            ;         ;
+; hex_count_RL.v                   ; yes             ; User Verilog HDL File        ; E:/source_code/robot_test/hex_count_RL.v                                       ;         ;
 ; de0_top.v                        ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/robot_test/de0_top.v                                            ;         ;
 ; button_debouncer.v               ; yes             ; Auto-Found Verilog HDL File  ; E:/source_code/robot_test/button_debouncer.v                                   ;         ;
 ; sld_signaltap.vhd                ; yes             ; Megafunction                 ; c:/altera/13.0sp1/quartus/libraries/megafunctions/sld_signaltap.vhd            ;         ;
@@ -245,29 +244,29 @@ applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimated Total logic elements              ; 1,075          ;
+; Estimated Total logic elements              ; 1,198          ;
 ;                                             ;                ;
-; Total combinational functions               ; 555            ;
+; Total combinational functions               ; 685            ;
 ; Logic element usage by number of LUT inputs ;                ;
-;     -- 4 input functions                    ; 255            ;
-;     -- 3 input functions                    ; 136            ;
-;     -- <=2 input functions                  ; 164            ;
+;     -- 4 input functions                    ; 308            ;
+;     -- 3 input functions                    ; 137            ;
+;     -- <=2 input functions                  ; 240            ;
 ;                                             ;                ;
 ; Logic elements by mode                      ;                ;
-;     -- normal mode                          ; 478            ;
-;     -- arithmetic mode                      ; 77             ;
+;     -- normal mode                          ; 515            ;
+;     -- arithmetic mode                      ; 170            ;
 ;                                             ;                ;
-; Total registers                             ; 856            ;
-;     -- Dedicated logic registers            ; 856            ;
+; Total registers                             ; 933            ;
+;     -- Dedicated logic registers            ; 933            ;
 ;     -- I/O registers                        ; 0              ;
 ;                                             ;                ;
 ; I/O pins                                    ; 252            ;
 ; Total memory bits                           ; 37888          ;
 ; Embedded Multiplier 9-bit elements          ; 0              ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 497            ;
-; Total fan-out                               ; 5485           ;
-; Average fan-out                             ; 2.65           ;
+; Maximum fan-out                             ; 591            ;
+; Total fan-out                               ; 6190           ;
+; Average fan-out                             ; 2.72           ;
 +---------------------------------------------+----------------+
 
 
@@ -276,12 +275,15 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                              ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                           ; Library Name ;
 +---------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE0_TOP                                                                                                ; 555 (1)           ; 856 (0)      ; 37888       ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                                                                                                                                                                                                                                                                                                                      ; work         ;
-;    |LED_matrix:matrix_5x5|                                                                              ; 25 (25)           ; 25 (25)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|LED_matrix:matrix_5x5                                                                                                                                                                                                                                                                                                                ; work         ;
-;    |button_debouncer:button_debouncer_inst0|                                                            ; 36 (36)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst0                                                                                                                                                                                                                                                                                              ; work         ;
-;    |button_debouncer:button_debouncer_inst2|                                                            ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst2                                                                                                                                                                                                                                                                                              ; work         ;
-;    |sld_hub:auto_hub|                                                                                   ; 121 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 120 (82)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
+; |DE0_TOP                                                                                                ; 685 (1)           ; 933 (0)      ; 37888       ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                                                                                                                                                                                                                                                                                                                      ; work         ;
+;    |button_debouncer:button_debouncer_inst0|                                                            ; 44 (44)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst0                                                                                                                                                                                                                                                                                              ; work         ;
+;    |divisor:time_1Hz|                                                                                   ; 45 (45)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:time_1Hz                                                                                                                                                                                                                                                                                                                     ; work         ;
+;    |divisor:time_2Hz|                                                                                   ; 45 (45)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:time_2Hz                                                                                                                                                                                                                                                                                                                     ; work         ;
+;    |divisor:time_4Hz|                                                                                   ; 44 (44)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|divisor:time_4Hz                                                                                                                                                                                                                                                                                                                     ; work         ;
+;    |hex_count_RL:hex_count_RL|                                                                          ; 14 (14)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|hex_count_RL:hex_count_RL                                                                                                                                                                                                                                                                                                            ; work         ;
+;    |hex_num:dispaly_hex|                                                                                ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|hex_num:dispaly_hex                                                                                                                                                                                                                                                                                                                  ; work         ;
+;    |sld_hub:auto_hub|                                                                                   ; 119 (1)           ; 86 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                     ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                    ; 118 (80)          ; 86 (58)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                        ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                      ; 21 (21)           ; 9 (9)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                    ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                              ; work         ;
 ;    |sld_signaltap:auto_signaltap_0|                                                                     ; 365 (1)           ; 714 (74)     ; 37888       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                       ; work         ;
@@ -367,80 +369,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Protected by Synthesis                                                                                                                     ;
-+--------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; Register Name                        ; Protected by Synthesis Attribute or Preserve Register Assignment ; Not to be Touched by Netlist Optimizations ;
-+--------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-; LED_matrix:matrix_5x5|LED_status[0]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[24] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[23] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[22] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[21] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[20] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[19] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[18] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[17] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[16] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[15] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[14] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[13] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[12] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[11] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[10] ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[9]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[8]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[7]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[6]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[5]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[4]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[3]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[2]  ; yes                                                              ; yes                                        ;
-; LED_matrix:matrix_5x5|LED_status[1]  ; yes                                                              ; yes                                        ;
-+--------------------------------------+------------------------------------------------------------------+--------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                    ;
-+-----------------------------------------------------+-----------------------------------------------------------------+
-; Register name                                       ; Reason for Removal                                              ;
-+-----------------------------------------------------+-----------------------------------------------------------------+
-; button_debouncer:button_debouncer_inst2|counter[20] ; Merged with button_debouncer:button_debouncer_inst0|counter[20] ;
-; button_debouncer:button_debouncer_inst2|counter[19] ; Merged with button_debouncer:button_debouncer_inst0|counter[19] ;
-; button_debouncer:button_debouncer_inst2|counter[18] ; Merged with button_debouncer:button_debouncer_inst0|counter[18] ;
-; button_debouncer:button_debouncer_inst2|counter[17] ; Merged with button_debouncer:button_debouncer_inst0|counter[17] ;
-; button_debouncer:button_debouncer_inst2|counter[16] ; Merged with button_debouncer:button_debouncer_inst0|counter[16] ;
-; button_debouncer:button_debouncer_inst2|counter[15] ; Merged with button_debouncer:button_debouncer_inst0|counter[15] ;
-; button_debouncer:button_debouncer_inst2|counter[14] ; Merged with button_debouncer:button_debouncer_inst0|counter[14] ;
-; button_debouncer:button_debouncer_inst2|counter[13] ; Merged with button_debouncer:button_debouncer_inst0|counter[13] ;
-; button_debouncer:button_debouncer_inst2|counter[12] ; Merged with button_debouncer:button_debouncer_inst0|counter[12] ;
-; button_debouncer:button_debouncer_inst2|counter[11] ; Merged with button_debouncer:button_debouncer_inst0|counter[11] ;
-; button_debouncer:button_debouncer_inst2|counter[10] ; Merged with button_debouncer:button_debouncer_inst0|counter[10] ;
-; button_debouncer:button_debouncer_inst2|counter[9]  ; Merged with button_debouncer:button_debouncer_inst0|counter[9]  ;
-; button_debouncer:button_debouncer_inst2|counter[8]  ; Merged with button_debouncer:button_debouncer_inst0|counter[8]  ;
-; button_debouncer:button_debouncer_inst2|counter[7]  ; Merged with button_debouncer:button_debouncer_inst0|counter[7]  ;
-; button_debouncer:button_debouncer_inst2|counter[6]  ; Merged with button_debouncer:button_debouncer_inst0|counter[6]  ;
-; button_debouncer:button_debouncer_inst2|counter[5]  ; Merged with button_debouncer:button_debouncer_inst0|counter[5]  ;
-; button_debouncer:button_debouncer_inst2|counter[4]  ; Merged with button_debouncer:button_debouncer_inst0|counter[4]  ;
-; button_debouncer:button_debouncer_inst2|counter[3]  ; Merged with button_debouncer:button_debouncer_inst0|counter[3]  ;
-; button_debouncer:button_debouncer_inst2|counter[2]  ; Merged with button_debouncer:button_debouncer_inst0|counter[2]  ;
-; button_debouncer:button_debouncer_inst2|counter[1]  ; Merged with button_debouncer:button_debouncer_inst0|counter[1]  ;
-; button_debouncer:button_debouncer_inst2|counter[0]  ; Merged with button_debouncer:button_debouncer_inst0|counter[0]  ;
-; Total Number of Removed Registers = 21              ;                                                                 ;
-+-----------------------------------------------------+-----------------------------------------------------------------+
-
-
 +------------------------------------------------------+
 ; General Register Statistics                          ;
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 856   ;
-; Number of registers using Synchronous Clear  ; 12    ;
+; Total registers                              ; 933   ;
+; Number of registers using Synchronous Clear  ; 108   ;
 ; Number of registers using Synchronous Load   ; 32    ;
-; Number of registers using Asynchronous Clear ; 335   ;
+; Number of registers using Asynchronous Clear ; 413   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 354   ;
+; Number of registers using Clock Enable       ; 356   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -469,62 +408,19 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------+
-; Source assignments for LED_matrix:matrix_5x5              ;
-+---------------------------+-------+------+----------------+
-; Assignment                ; Value ; From ; To             ;
-+---------------------------+-------+------+----------------+
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[0]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[0]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[24] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[24] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[23] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[23] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[22] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[22] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[21] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[21] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[20] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[20] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[19] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[19] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[18] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[18] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[17] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[17] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[16] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[16] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[15] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[15] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[14] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[14] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[13] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[13] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[12] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[12] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[11] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[11] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[10] ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[10] ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[9]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[9]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[8]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[8]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[7]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[7]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[6]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[6]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[5]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[5]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[4]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[4]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[3]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[3]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[2]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[2]  ;
-; PRESERVE_REGISTER         ; on    ; -    ; LED_status[1]  ;
-; PRESERVE_FANOUT_FREE_NODE ; on    ; -    ; LED_status[1]  ;
-+---------------------------+-------+------+----------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |DE0_TOP|hex_count_RL:hex_count_RL|count                                                                       ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|hub_minor_ver_reg[0]                    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|mixer_addr_reg[4]                       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 5 LEs                ; 10 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|word_counter[0] ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 7 LEs                ; 21 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|irsr_reg[2]                             ;
+; 34:1               ; 4 bits    ; 88 LEs        ; 60 LEs               ; 28 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|design_hash_reg[3]                      ;
+; 20:1               ; 4 bits    ; 52 LEs        ; 36 LEs               ; 16 LEs                 ; Yes        ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg|WORD_SR[0]      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------+
@@ -560,13 +456,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: divisor:time_0P5s ;
-+----------------+----------+------------------------------------+
-; Parameter Name ; Value    ; Type                               ;
-+----------------+----------+------------------------------------+
-; Threshold      ; 12500000 ; Signed Integer                     ;
-+----------------+----------+------------------------------------+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisor:time_1Hz ;
++----------------+----------+-----------------------------------+
+; Parameter Name ; Value    ; Type                              ;
++----------------+----------+-----------------------------------+
+; Threshold      ; 25000000 ; Signed Integer                    ;
++----------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisor:time_2Hz ;
++----------------+----------+-----------------------------------+
+; Parameter Name ; Value    ; Type                              ;
++----------------+----------+-----------------------------------+
+; Threshold      ; 12500000 ; Signed Integer                    ;
++----------------+----------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: divisor:time_4Hz ;
++----------------+---------+------------------------------------+
+; Parameter Name ; Value   ; Type                               ;
++----------------+---------+------------------------------------+
+; Threshold      ; 6250000 ; Signed Integer                     ;
++----------------+---------+------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -630,22 +546,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+----------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "divisor:time_0P5s"                                                                  ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                             ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-; oClk ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+------+--------+----------+-------------------------------------------------------------------------------------+
-
-
-+---------------------------------------------------------------------+
-; Port Connectivity Checks: "button_debouncer:button_debouncer_inst2" ;
-+-------+-------+----------+------------------------------------------+
-; Port  ; Type  ; Severity ; Details                                  ;
-+-------+-------+----------+------------------------------------------+
-; rst_n ; Input ; Info     ; Stuck at VCC                             ;
-+-------+-------+----------+------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "button_debouncer:button_debouncer_inst2"                                                ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; rst_n    ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; data_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------+
@@ -676,96 +584,97 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
++---------------------------------+
+; Elapsed Time Per Partition      ;
++------------------+--------------+
+; Partition Name   ; Elapsed Time ;
++------------------+--------------+
+; Top              ; 00:00:00     ;
+; sld_hub:auto_hub ; 00:00:00     ;
++------------------+--------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                     ;
-+--------------------------------------+---------------+-----------+----------------+-------------------+--------------------------------------------------+---------+
-; Name                                 ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection                                ; Details ;
-+--------------------------------------+---------------+-----------+----------------+-------------------+--------------------------------------------------+---------+
-; CLOCK_50                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLOCK_50                                         ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[0]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[0]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[0]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[10]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[10] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[10]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[11]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[11] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[11]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[12]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[12] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[12]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[13]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[13] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[13]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[14]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[14] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[14]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[15]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[15] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[15]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[16] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[16]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[16] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[16]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[17] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[17]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[17] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[17]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[18] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[18]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[18] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[18]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[19] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[19]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[19] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[19]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[1]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[1]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[1]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[20] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[20]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[20] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[20]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[21] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[21]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[21] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[21]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[22] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[22]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[22] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[22]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[23] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[23]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[23] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[23]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[24] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[24]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[24] ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[24]             ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[2]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[2]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[2]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[3]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[3]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[3]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[4]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[4]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[4]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[5]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[5]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[5]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[6]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[6]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[6]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[7]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[7]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[7]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[8]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[8]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[8]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[9]              ; N/A     ;
-; LED_matrix:matrix_5x5|LED_status[9]  ; pre-synthesis ; connected ; Top            ; post-synthesis    ; LED_matrix:matrix_5x5|LED_status[9]              ; N/A     ;
-; LED_matrix:matrix_5x5|iClk           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; button_debouncer:button_debouncer_inst2|data_out ; N/A     ;
-; LED_matrix:matrix_5x5|iClk           ; pre-synthesis ; connected ; Top            ; post-synthesis    ; button_debouncer:button_debouncer_inst2|data_out ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[0]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[5]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[0]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[5]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[1]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[6]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[1]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[6]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[2]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[7]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[2]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[7]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[3]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[8]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[3]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[8]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[4]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[9]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iCol[4]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[9]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[0]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[0]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[0]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[0]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[1]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[1]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[1]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[1]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[2]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[2]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[2]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[2]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[3]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[3]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[3]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[3]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[4]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[4]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRow[4]        ; pre-synthesis ; connected ; Top            ; post-synthesis    ; SW[4]                                            ; N/A     ;
-; LED_matrix:matrix_5x5|iRst_n         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; button_debouncer:button_debouncer_inst0|data_out ; N/A     ;
-; LED_matrix:matrix_5x5|iRst_n         ; pre-synthesis ; connected ; Top            ; post-synthesis    ; button_debouncer:button_debouncer_inst0|data_out ; N/A     ;
-+--------------------------------------+---------------+-----------+----------------+-------------------+--------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Connections to In-System Debugging Instance "auto_signaltap_0"                                                                                                                                                                                                                             ;
++--------------------------------------+---------------+-----------+----------------+-------------------+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Name                                 ; Type          ; Status    ; Partition Name ; Netlist Type Used ; Actual Connection ; Details                                                                                                                                                        ;
++--------------------------------------+---------------+-----------+----------------+-------------------+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; CLOCK_50                             ; pre-synthesis ; connected ; Top            ; post-synthesis    ; CLOCK_50          ; N/A                                                                                                                                                            ;
+; LED_matrix:matrix_5x5|LED_status[0]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[0]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[10] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[10] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[11] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[11] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[12] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[12] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[13] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[13] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[14] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[14] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[15] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[15] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[16] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[16] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[17] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[17] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[18] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[18] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[19] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[19] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[1]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[1]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[20] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[20] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[21] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[21] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[22] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[22] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[23] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[23] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[24] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[24] ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[2]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[2]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[3]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[3]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[4]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[4]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[5]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[5]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[6]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[6]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[7]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[7]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[8]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[8]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[9]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|LED_status[9]  ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iClk           ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iClk           ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[0]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[0]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[1]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[1]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[2]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[2]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[3]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[3]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[4]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iCol[4]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[0]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[0]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[1]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[1]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[2]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[2]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[3]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[3]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[4]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRow[4]        ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRst_n         ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
+; LED_matrix:matrix_5x5|iRst_n         ; pre-synthesis ; missing   ; Top            ; post-synthesis    ; GND               ; The name does not exist in your design or refers to an invalid hierarchy or bus element.  You may have modified your design after creating the debug instance. ;
++--------------------------------------+---------------+-----------+----------------+-------------------+-------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
 +-------------------------------+
@@ -774,7 +683,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Nov 03 18:20:29 2022
+    Info: Processing started: Sun Nov 27 17:42:43 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (12021): Found 1 design units, including 1 entities, in source file led.v
@@ -789,15 +698,15 @@ Info (12021): Found 1 design units, including 1 entities, in source file hex_cou
     Info (12023): Found entity 1: hex_count
 Info (12021): Found 1 design units, including 1 entities, in source file led_matrix.v
     Info (12023): Found entity 1: LED_matrix
-Warning (10275): Verilog HDL Module Instantiation warning at de0_top.v(329): ignored dangling comma in List of Port Connections
+Info (12021): Found 1 design units, including 1 entities, in source file hex_count_rl.v
+    Info (12023): Found entity 1: hex_count_RL
 Warning (12125): Using design file de0_top.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
     Info (12023): Found entity 1: DE0_TOP
 Info (12127): Elaborating entity "DE0_TOP" for the top level hierarchy
-Warning (10034): Output port "HEX0_D" at de0_top.v(133) has no driver
 Warning (10034): Output port "HEX1_D" at de0_top.v(135) has no driver
 Warning (10034): Output port "HEX2_D" at de0_top.v(137) has no driver
 Warning (10034): Output port "HEX3_D" at de0_top.v(139) has no driver
-Warning (10034): Output port "LEDG" at de0_top.v(142) has no driver
+Warning (10034): Output port "LEDG[9..3]" at de0_top.v(142) has no driver
 Warning (10034): Output port "DRAM_ADDR" at de0_top.v(150) has no driver
 Warning (10034): Output port "FL_ADDR" at de0_top.v(164) has no driver
 Warning (10034): Output port "VGA_R" at de0_top.v(192) has no driver
@@ -805,7 +714,6 @@ Warning (10034): Output port "VGA_G" at de0_top.v(193) has no driver
 Warning (10034): Output port "VGA_B" at de0_top.v(194) has no driver
 Warning (10034): Output port "GPIO0_CLKOUT" at de0_top.v(197) has no driver
 Warning (10034): Output port "GPIO1_CLKOUT" at de0_top.v(200) has no driver
-Warning (10034): Output port "HEX0_DP" at de0_top.v(134) has no driver
 Warning (10034): Output port "HEX1_DP" at de0_top.v(136) has no driver
 Warning (10034): Output port "HEX2_DP" at de0_top.v(138) has no driver
 Warning (10034): Output port "HEX3_DP" at de0_top.v(140) has no driver
@@ -841,10 +749,14 @@ Warning (10230): Verilog HDL assignment warning at button_debouncer.v(78): trunc
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(79): truncated value with size 32 to match size of target (21)
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(88): truncated value with size 32 to match size of target (21)
 Warning (10230): Verilog HDL assignment warning at button_debouncer.v(90): truncated value with size 32 to match size of target (21)
-Info (12128): Elaborating entity "divisor" for hierarchy "divisor:time_0P5s"
-Info (12128): Elaborating entity "LED_matrix" for hierarchy "LED_matrix:matrix_5x5"
-Warning (10036): Verilog HDL or VHDL warning at LED_matrix.v(8): object "LED_status" assigned a value but never read
-Warning (10030): Net "count" at LED_matrix.v(9) has no driver or initial value, using a default initial value '0'
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:time_1Hz"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:time_2Hz"
+Info (12128): Elaborating entity "divisor" for hierarchy "divisor:time_4Hz"
+Info (12128): Elaborating entity "hex_count_RL" for hierarchy "hex_count_RL:hex_count_RL"
+Warning (10646): Verilog HDL Event Control warning at hex_count_RL.v(10): posedge or negedge of vector "iClk" depends solely on its least-significant bit
+Warning (10230): Verilog HDL assignment warning at hex_count_RL.v(15): truncated value with size 32 to match size of target (4)
+Warning (10230): Verilog HDL assignment warning at hex_count_RL.v(18): truncated value with size 32 to match size of target (4)
+Info (12128): Elaborating entity "hex_num" for hierarchy "hex_num:dispaly_hex"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0024.tdf
     Info (12023): Found entity 1: altsyncram_0024
 Info (12021): Found 1 design units, including 1 entities, in source file db/mux_grc.tdf
@@ -979,14 +891,6 @@ Warning (13039): The following bidir pins have no drivers
     Warning (13040): Bidir "GPIO1_D[30]" has no driver
     Warning (13040): Bidir "GPIO1_D[31]" has no driver
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0_D[0]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[1]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[2]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[3]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[4]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[5]" is stuck at GND
-    Warning (13410): Pin "HEX0_D[6]" is stuck at GND
-    Warning (13410): Pin "HEX0_DP" is stuck at GND
     Warning (13410): Pin "HEX1_D[0]" is stuck at GND
     Warning (13410): Pin "HEX1_D[1]" is stuck at GND
     Warning (13410): Pin "HEX1_D[2]" is stuck at GND
@@ -1011,9 +915,6 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX3_D[5]" is stuck at GND
     Warning (13410): Pin "HEX3_D[6]" is stuck at GND
     Warning (13410): Pin "HEX3_DP" is stuck at GND
-    Warning (13410): Pin "LEDG[0]" is stuck at GND
-    Warning (13410): Pin "LEDG[1]" is stuck at GND
-    Warning (13410): Pin "LEDG[2]" is stuck at GND
     Warning (13410): Pin "LEDG[3]" is stuck at GND
     Warning (13410): Pin "LEDG[4]" is stuck at GND
     Warning (13410): Pin "LEDG[5]" is stuck at GND
@@ -1098,13 +999,28 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "GPIO1_CLKOUT[0]" is stuck at GND
     Warning (13410): Pin "GPIO1_CLKOUT[1]" is stuck at GND
 Info (286031): Timing-Driven Synthesis is running on partition "Top"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (286031): Timing-Driven Synthesis is running on partition "sld_hub:auto_hub"
 Info (144001): Generated suppressed messages file E:/source_code/robot_test/DE0_TOP.map.smsg
-Info (35024): Succesfully connected in-system debug instance "auto_signaltap_0" to all 75 required data inputs, trigger inputs, acquisition clocks, and dynamic pins
+Critical Warning (35025): Partially connected in-system debug instance "auto_signaltap_0" to 1 of its 75 required data inputs, trigger inputs, acquisition clocks, and dynamic pins.  There were 0 illegal, 0 inaccessible, and 74 missing sources or connections.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 10 input pin(s) that do not drive logic
+Warning (21074): Design contains 20 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "CLOCK_50_2"
     Warning (15610): No output dependent on input pin "ORG_BUTTON[1]"
+    Warning (15610): No output dependent on input pin "ORG_BUTTON[2]"
+    Warning (15610): No output dependent on input pin "SW[0]"
+    Warning (15610): No output dependent on input pin "SW[1]"
+    Warning (15610): No output dependent on input pin "SW[3]"
+    Warning (15610): No output dependent on input pin "SW[4]"
+    Warning (15610): No output dependent on input pin "SW[5]"
+    Warning (15610): No output dependent on input pin "SW[6]"
+    Warning (15610): No output dependent on input pin "SW[7]"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
     Warning (15610): No output dependent on input pin "UART_RXD"
     Warning (15610): No output dependent on input pin "UART_RTS"
     Warning (15610): No output dependent on input pin "FL_RY"
@@ -1113,17 +1029,17 @@ Warning (21074): Design contains 10 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO0_CLKIN[1]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[0]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[1]"
-Info (21057): Implemented 1383 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1507 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 26 input pins
     Info (21059): Implemented 119 output pins
     Info (21060): Implemented 111 bidirectional pins
-    Info (21061): Implemented 1089 logic cells
+    Info (21061): Implemented 1213 logic cells
     Info (21064): Implemented 37 RAM segments
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 292 warnings
-    Info: Peak virtual memory: 4694 megabytes
-    Info: Processing ended: Thu Nov 03 18:20:33 2022
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 4713 megabytes
+    Info: Processing ended: Sun Nov 27 17:42:48 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:02
 
 
 +------------------------------------------+

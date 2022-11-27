@@ -328,8 +328,49 @@ button_debouncer	button_debouncer_inst2(
 //  .iCol(SW[9:5]),
 //);
 
-/* midterm exam 04 */
+// ----
+wire wClk_1hz;
+wire wClk_2hz;
+wire wClk_4hz;
+wire [3:0] hex_num;
 
-/* midterm exam 05 */
-  
+divisor #( .Threshold(25000000)
+  )
+  time_1Hz (
+  .iClk(CLOCK_50),
+  .iRst_n(BUTTON[0]),
+  .oClk(wClk_1hz)
+);
+
+divisor #( .Threshold(12500000)
+  )
+  time_2Hz (
+  .iClk(CLOCK_50),
+  .iRst_n(BUTTON[0]),
+  .oClk(wClk_2hz)
+);
+
+divisor #( .Threshold(6250000)
+  )
+  time_4Hz (
+  .iClk(CLOCK_50),
+  .iRst_n(BUTTON[0]),
+  .oClk(wClk_4hz)
+);
+assign LEDG[0] = wClk_1hz;
+assign LEDG[1] = wClk_2hz;
+assign LEDG[2] = wClk_4hz;
+
+hex_count_RL hex_count_RL(
+  .iClk({wClk_1hz, wClk_2hz, wClk_4hz}),
+  .iSW(SW[2]),
+  .iRst_n(BUTTON[0]),
+  .oNum(hex_num)
+);
+hex_num dispaly_hex (
+  .iSW(hex_num),
+  .oHEX(HEX0_D),
+  .oHEX_DP(HEX0_DP)
+);
+
 endmodule
