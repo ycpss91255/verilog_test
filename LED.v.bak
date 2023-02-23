@@ -1,3 +1,0 @@
-module (iSW, oLED);
-	input iSW;
-	output oLED;
