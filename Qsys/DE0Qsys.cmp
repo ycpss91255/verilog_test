@@ -1,0 +1,7 @@
+	component DE0Qsys is
+		port (
+			clk_50m_clk   : in std_logic := 'X'; -- clk
+			reset_reset_n : in std_logic := 'X'  -- reset_n
+		);
+	end component DE0Qsys;
+
