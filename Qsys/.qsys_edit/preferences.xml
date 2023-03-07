@@ -3,7 +3,7 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="111" />
+   <connections preferredWidth="159" />
    <irq preferredWidth="34" />
   </columns>
  </systemtable>
@@ -14,8 +14,8 @@
    <frequency preferredWidth="270" />
   </columns>
  </clocktable>
- <window width="1160" height="727" x="0" y="0" />
+ <window width="1160" height="727" x="-7" y="720" />
  <library
-   expandedCategories="Project,Library/Verification,Library,Library/Bridges/Memory-Mapped,Library/Verification/Debug &amp; Performance,Library/Interface Protocols,Library/Bridges,Library/Interface Protocols/Serial" />
+   expandedCategories="Library,Project,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals" />
  <generation block_symbol_file="0" />
 </preferences>
