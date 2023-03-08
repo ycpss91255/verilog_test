@@ -238,22 +238,25 @@ button_debouncer	button_debouncer_inst2(
 //=======================================================
 
 DE0Qsys u0 (
-    .clk_50m_clk       (CLOCK_50),       //     clk_50m.clk
-    .reset_reset_n     (BUTTON[0]),     //       reset.reset_n
-    .dram_clk_clk      (DRAM_CLK),      //    dram_clk.clk
-    .sdram_wires_addr  (DRAM_ADDR),  // sdram_wires.addr
-    .sdram_wires_ba    ({DRAM_BA_1, DRAM_BA_0}),    //            .ba
-    .sdram_wires_cas_n (DRAM_CAS_N), //            .cas_n
-    .sdram_wires_cke   (DRAM_CKE),   //            .cke
-    .sdram_wires_cs_n  (DRAM_CS_N),  //            .cs_n
-    .sdram_wires_dq    (DRAM_DQ),    //            .dq
-    .sdram_wires_dqm   ({DRAM_UDQM, DRAM_LDQM}),   //            .dqm
-    .sdram_wires_ras_n (DRAM_RAS_N), //            .ras_n
-    .sdram_wires_we_n  (DRAM_WE_N),  //            .we_n
-    .led_export        (LEDG),        //         led.export
-    .areset_export     (0),     //      areset.export
-    .locked_export     (/* no use*/),     //      locked.export
-    .phasedone_export  (/* no use*/)   //   phasedone.export
+    .clk_50m_clk       (CLOCK_50),
+    .reset_reset_n     (BUTTON[0]),
+    .dram_clk_clk      (DRAM_CLK),
+    .sdram_wires_addr  (DRAM_ADDR),
+    .sdram_wires_ba    ({DRAM_BA_1, DRAM_BA_0}),
+    .sdram_wires_cas_n (DRAM_CAS_N),
+    .sdram_wires_cke   (DRAM_CKE),
+    .sdram_wires_cs_n  (DRAM_CS_N),
+    .sdram_wires_dq    (DRAM_DQ),
+    .sdram_wires_dqm   ({DRAM_UDQM, DRAM_LDQM}),
+    .sdram_wires_ras_n (DRAM_RAS_N),
+    .sdram_wires_we_n  (DRAM_WE_N),
+    .areset_export     (0),
+    .locked_export     (/* no use*/),
+    .phasedone_export  (/* no use*/),
+    .led_export        (LEDG),
+    .button_export     ({BUTTON[2], BUTTON[1], BUTTON[0]}),
+    .sw_export         (SW),
+    .hex0_export       ({HEX0_DP, HEX0_D})
 );
 
 endmodule

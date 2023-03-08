@@ -3,6 +3,7 @@
 	<name>count_binary</name>
 	<comment></comment>
 	<projects>
+		<project>count_binary_bsp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

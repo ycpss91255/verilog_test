@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2cpu' in SOPC Builder design 'DE0Qsys'
  * SOPC Builder design path: E:/SourceCode/verilog_test/Qsys/DE0Qsys.sopcinfo
  *
- * Generated: Wed Mar 01 17:39:43 CST 2023
+ * Generated: Wed Mar 08 10:00:47 CST 2023
  */
 
 /*
@@ -65,9 +65,9 @@
  *
  */
 
-#define RESET_REGION_BASE 0x800000
+#define RESET_REGION_BASE 0x2800000
 #define RESET_REGION_SPAN 32
-#define SDRAM_CTRL_REGION_BASE 0x800020
+#define SDRAM_CTRL_REGION_BASE 0x2800020
 #define SDRAM_CTRL_REGION_SPAN 8388576
 
 

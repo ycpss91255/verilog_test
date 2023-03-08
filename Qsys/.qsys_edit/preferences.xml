@@ -3,19 +3,23 @@
  <debug showDebugMenu="0" />
  <systemtable>
   <columns>
-   <connections preferredWidth="159" />
+   <connections preferredWidth="223" />
    <irq preferredWidth="34" />
+   <description preferredWidth="59" />
+   <baseaddress preferredWidth="123" />
+   <inputclock preferredWidth="83" />
+   <endaddress preferredWidth="30" />
   </columns>
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="289" />
-   <clocksource preferredWidth="289" />
-   <frequency preferredWidth="270" />
+   <clockname preferredWidth="287" />
+   <clocksource preferredWidth="286" />
+   <frequency preferredWidth="268" />
   </columns>
  </clocktable>
- <window width="1160" height="727" x="-7" y="720" />
- <library
-   expandedCategories="Library,Project,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals" />
+ <window width="1161" height="721" x="1139" y="719" />
+ <library expandedCategories="Library,Project" />
  <generation block_symbol_file="0" />
+ <hdlexample language="VERILOG" />
 </preferences>

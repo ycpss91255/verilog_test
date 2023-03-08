@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2cpu' in SOPC Builder design 'DE0Qsys'
  * SOPC Builder design path: E:/SourceCode/verilog_test/Qsys/DE0Qsys.sopcinfo
  *
- * Generated: Wed Mar 01 17:39:43 CST 2023
+ * Generated: Wed Mar 08 10:00:47 CST 2023
  */
 
 /*
@@ -59,14 +59,18 @@
  */
 
 #include "altera_nios2_qsys_irq.h"
+#include "altera_avalon_dma.h"
 #include "altera_avalon_jtag_uart.h"
+#include "altera_avalon_timer.h"
 
 /*
  * Allocate the device storage
  */
 
 ALTERA_NIOS2_QSYS_IRQ_INSTANCE ( NIOS2CPU, nios2cpu);
+ALTERA_AVALON_DMA_INSTANCE ( DMA, dma);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG_UART, jtag_uart);
+ALTERA_AVALON_TIMER_INSTANCE ( TIMER, timer);
 
 /*
  * Initialize the interrupt controller devices
@@ -89,5 +93,7 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
+    ALTERA_AVALON_TIMER_INIT ( TIMER, timer);
+    ALTERA_AVALON_DMA_INIT ( DMA, dma);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG_UART, jtag_uart);
 }

@@ -3,7 +3,7 @@
 # Machine generated for CPU 'nios2cpu' in SOPC Builder design 'DE0Qsys'
 # SOPC Builder design path: E:/SourceCode/verilog_test/Qsys/DE0Qsys.sopcinfo
 #
-# Generated: Wed Mar 01 17:39:43 CST 2023
+# Generated: Wed Mar 08 10:00:47 CST 2023
 
 # DO NOT MODIFY THIS FILE
 #
@@ -47,4 +47,4 @@
 # by allowing GDB to cache memory contents on the host.
 
 # sdram_ctrl
-memory 0x800000 0x1000000 cache
+memory 0x2800000 0x3000000 cache
