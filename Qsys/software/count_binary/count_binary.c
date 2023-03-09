@@ -1,51 +1,56 @@
-/* ¹êÅç¤@: LED±ÛÂà´ú¸Õ */
-#include <io.h>     /* ¨t²ÎI/O¨ç¦¡®w*/
-#include <stdio.h>  /* ¨t²Î¼Ğ·Ç¿é¥X¤J¨ç¦¡®w */
-#include <system.h> /* ¨t²Î¨ç¦¡®w */
-#include <unistd.h> /* «Å§i usleep ¨ç¼Æ */
-#include <stdint.h> /* ±`¥Î¼Æ­È«¬ºA®w */
+/* ï¿½î©–ï¿½ï¿½å‰–ï¿½é ¦î³Šî§@: LEDï¿½î©–ï¿½ï¿½å‰–ï¿½é ¦î³Šî§ï¿½î©–ï¿½ï¿½å‰–ï¿½? */
+#include <io.h>     /* ï¿½î©•æ¥ ï¿½î©–ï¿½ï¿½èƒŒ/Oï¿½î©–ï¿½æ’˜î±ï¿½èºï¿½/
+#include <stdio.h>  /* ï¿½î©•æ¥ ï¿½î©–ï¿½ç’…î©”ï¿½ï¿½è²‰î§Xï¿½î©•ï¿½ï¿½î©–ï¿½æ’˜î±ï¿½èºï¿½*/
+#include <system.h> /* ï¿½î©•æ¥ ï¿½î©–ï¿½ï¿½è³¢ï¿½ï¿½î©•æ¥¨ */
+#include <unistd.h> /* ï¿½î©–ï¿½ï¿½ï¿½usleep ï¿½î©–ï¿½ï¿½å‰–ï¿½? */
+#include <string.h> /* ï¿½î©•ï¿½ï¿½î©–ï¿½ï¿½å‰›î²•ï¿½æ¸²î§w */
+#include <stdint.h> /* ï¿½î©•ç‹—ï¿½î©–ï¿½ï¿½è©¨ï¿½ï¿½ç¥ˆî§ï¿½î©•ï¿½ï¿½î©•æ¥¨ */
+#include <stdbool.h>/* ï¿½î©–ï¿½ï¿½å‰–ï¿½ï¿½æ–‡ï¿½é ¦î³Šî§ï¿½î©•ï¿½ï¿½î©–ï¿½æ’˜î±ï¿½èºï¿½*/
 
 void button_func();
 void hex_func();
 
 int main() {
+  int button, sw;
+  printf("hello cyc\n");
   while (1) {
-    button_func();
-    hex_func();
+    button = IORD(BUTTON_BASE, 0);
+    sw = IORD(SW_BASE, 0);
+
+    button_func(button);
+    hex_func(sw);
   }
   return 0;
 }
 
-void button_func() {
+void button_func(int button) {
   int i, j;
-  int button;
-
-  button = IORD(BUTTON_BASE, 0);
-
+  // BUTTON 1
   if (!((button >> 1) & 0x01)) {
     printf("hello 810440023\n");
     usleep(50000);
   }
 
+  // BUTTON 2
   if (!((button >> 2) & 0x1)) {
+    /* LED left shift */
     for (i = 0; i < 2; i++) {
       for (j = 0; j < 10; j++) {
         IOWR(LED_BASE, 0, 0x01 << j);
-        usleep(10000); /* ©µ¿ğ  us */
+        usleep(10000); /* delay us */
       }
     }
-
+    /* LED right shift */
     for (i = 0; i < 3; i++) {
       for (j = 0; j < 10; j++) {
         IOWR(LED_BASE, 0, 0x200 >> j);
-        usleep(10000); /* ©µ¿ğ  us */
+        usleep(10000); /* delay us */
       }
     }
   }
 }
 
-void hex_func(){
-  int sw;
+void hex_func(int num){
   unsigned char segments[16] = {
       0x3F, // 0 0b0011 1111
       0x06, // 1 0b0000 0110
@@ -64,9 +69,6 @@ void hex_func(){
       0x79, // E 0b0111 1001
       0x71  // F 0b0111 0001
   };
-
-  sw = IORD(SW_BASE, 0);
-  IOWR(HEX0_BASE, 0, ~segments[sw]);
-  printf("sw = 0x%x\n", sw);
-  // printf("hex = %X\n", segments[sw]);
+  num = num & 0x0F;
+  IOWR(HEX0_BASE, 0, ~segments[num]);
 }

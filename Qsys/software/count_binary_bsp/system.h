@@ -4,7 +4,7 @@
  * Machine generated for CPU 'nios2cpu' in SOPC Builder design 'DE0Qsys'
  * SOPC Builder design path: E:/SourceCode/verilog_test/Qsys/DE0Qsys.sopcinfo
  *
- * Generated: Wed Mar 08 10:55:04 CST 2023
+ * Generated: Sun Mar 12 12:02:00 CST 2023
  */
 
 /*
@@ -275,7 +275,7 @@
 
 #define ALT_MAX_FD 32
 #define ALT_SYS_CLK none
-#define ALT_TIMESTAMP_CLK none
+#define ALT_TIMESTAMP_CLK TIMER
 
 
 /*
