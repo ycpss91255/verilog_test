@@ -12,7 +12,7 @@ void hex_func();
 
 int main() {
   int button, sw;
-  printf("hello cyc\n");
+  printf("hello nios II\n");
   while (1) {
     button = IORD(BUTTON_BASE, 0);
     sw = IORD(SW_BASE, 0);
@@ -69,6 +69,7 @@ void hex_func(int num){
       0x79, // E 0b0111 1001
       0x71  // F 0b0111 0001
   };
+
   num = num & 0x0F;
   IOWR(HEX0_BASE, 0, ~segments[num]);
 }

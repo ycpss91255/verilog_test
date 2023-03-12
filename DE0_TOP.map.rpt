@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE0_TOP
-Sun Mar 12 13:30:34 2023
+Sun Mar 12 14:26:13 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -461,13 +461,13 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun Mar 12 13:30:34 2023           ;
+; Analysis & Synthesis Status        ; Successful - Sun Mar 12 14:26:13 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
-; Total logic elements               ; 5,825                                           ;
-;     Total combinational functions  ; 4,363                                           ;
+; Total logic elements               ; 5,827                                           ;
+;     Total combinational functions  ; 4,365                                           ;
 ;     Dedicated logic registers      ; 3,639                                           ;
 ; Total registers                    ; 3639                                            ;
 ; Total pins                         ; 252                                             ;
@@ -727,16 +727,16 @@ applicable agreement for further details.
 +---------------------------------------------+----------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                            ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 5,825                                                                            ;
+; Estimated Total logic elements              ; 5,827                                                                            ;
 ;                                             ;                                                                                  ;
-; Total combinational functions               ; 4363                                                                             ;
+; Total combinational functions               ; 4365                                                                             ;
 ; Logic element usage by number of LUT inputs ;                                                                                  ;
-;     -- 4 input functions                    ; 2221                                                                             ;
-;     -- 3 input functions                    ; 1385                                                                             ;
-;     -- <=2 input functions                  ; 757                                                                              ;
+;     -- 4 input functions                    ; 2224                                                                             ;
+;     -- 3 input functions                    ; 1386                                                                             ;
+;     -- <=2 input functions                  ; 755                                                                              ;
 ;                                             ;                                                                                  ;
 ; Logic elements by mode                      ;                                                                                  ;
-;     -- normal mode                          ; 3906                                                                             ;
+;     -- normal mode                          ; 3908                                                                             ;
 ;     -- arithmetic mode                      ; 457                                                                              ;
 ;                                             ;                                                                                  ;
 ; Total registers                             ; 3639                                                                             ;
@@ -751,7 +751,7 @@ applicable agreement for further details.
 ;                                             ;                                                                                  ;
 ; Maximum fan-out node                        ; DE0Qsys:u0|DE0Qsys_syspll:syspll|DE0Qsys_syspll_altpll_fbh2:sd1|wire_pll7_clk[0] ;
 ; Maximum fan-out                             ; 2984                                                                             ;
-; Total fan-out                               ; 30256                                                                            ;
+; Total fan-out                               ; 30267                                                                            ;
 ; Average fan-out                             ; 3.44                                                                             ;
 +---------------------------------------------+----------------------------------------------------------------------------------+
 
@@ -761,7 +761,7 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                                                                                     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                                            ; Library Name ;
 +----------------------------------------------------------------------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |DE0_TOP                                                                                                       ; 4363 (1)          ; 3639 (0)     ; 35840       ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                                                                                                                                                                                                                                                                                                                       ; work         ;
+; |DE0_TOP                                                                                                       ; 4365 (1)          ; 3639 (0)     ; 35840       ; 0            ; 0       ; 0         ; 252  ; 0            ; |DE0_TOP                                                                                                                                                                                                                                                                                                                                       ; work         ;
 ;    |DE0Qsys:u0|                                                                                                ; 3813 (0)          ; 2964 (0)     ; 15360       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|DE0Qsys:u0                                                                                                                                                                                                                                                                                                                            ; work         ;
 ;       |DE0Qsys_addr_router:addr_router|                                                                        ; 8 (8)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|DE0Qsys:u0|DE0Qsys_addr_router:addr_router                                                                                                                                                                                                                                                                                            ; work         ;
 ;       |DE0Qsys_addr_router_001:addr_router_001|                                                                ; 13 (13)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|DE0Qsys:u0|DE0Qsys_addr_router_001:addr_router_001                                                                                                                                                                                                                                                                                    ; work         ;
@@ -988,8 +988,8 @@ applicable agreement for further details.
 ;    |button_debouncer:button_debouncer_inst0|                                                                   ; 43 (43)           ; 26 (26)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst0                                                                                                                                                                                                                                                                                               ; work         ;
 ;    |button_debouncer:button_debouncer_inst1|                                                                   ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst1                                                                                                                                                                                                                                                                                               ; work         ;
 ;    |button_debouncer:button_debouncer_inst2|                                                                   ; 0 (0)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|button_debouncer:button_debouncer_inst2                                                                                                                                                                                                                                                                                               ; work         ;
-;    |sld_hub:auto_hub|                                                                                          ; 204 (1)           ; 130 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                      ; work         ;
-;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                           ; 203 (160)         ; 130 (101)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                         ; work         ;
+;    |sld_hub:auto_hub|                                                                                          ; 206 (1)           ; 130 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub                                                                                                                                                                                                                                                                                                                      ; work         ;
+;       |sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|                                                           ; 205 (162)         ; 130 (101)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst                                                                                                                                                                                                                                                                         ; work         ;
 ;          |sld_rom_sr:hub_info_reg|                                                                             ; 26 (26)           ; 10 (10)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_rom_sr:hub_info_reg                                                                                                                                                                                                                                                 ; work         ;
 ;          |sld_shadow_jsm:shadow_jsm|                                                                           ; 17 (17)           ; 19 (19)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_hub:auto_hub|sld_jtag_hub:\jtag_hub_gen:sld_jtag_hub_inst|sld_shadow_jsm:shadow_jsm                                                                                                                                                                                                                                               ; work         ;
 ;    |sld_signaltap:auto_signaltap_0|                                                                            ; 302 (1)           ; 509 (40)     ; 20480       ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE0_TOP|sld_signaltap:auto_signaltap_0                                                                                                                                                                                                                                                                                                        ; work         ;
@@ -9495,7 +9495,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Sun Mar 12 13:30:12 2023
+    Info: Processing started: Sun Mar 12 14:25:47 2023
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
 Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Warning (12125): Using design file de0_top.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
@@ -10214,17 +10214,17 @@ Warning (21074): Design contains 9 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "GPIO0_CLKIN[1]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[0]"
     Warning (15610): No output dependent on input pin "GPIO1_CLKIN[1]"
-Info (21057): Implemented 6649 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 6651 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 26 input pins
     Info (21059): Implemented 119 output pins
     Info (21060): Implemented 111 bidirectional pins
-    Info (21061): Implemented 6227 logic cells
+    Info (21061): Implemented 6229 logic cells
     Info (21064): Implemented 164 RAM segments
     Info (21065): Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 287 warnings
-    Info: Peak virtual memory: 4845 megabytes
-    Info: Processing ended: Sun Mar 12 13:30:34 2023
-    Info: Elapsed time: 00:00:22
+    Info: Peak virtual memory: 4849 megabytes
+    Info: Processing ended: Sun Mar 12 14:26:13 2023
+    Info: Elapsed time: 00:00:26
     Info: Total CPU time (on all processors): 00:00:05
 
 
