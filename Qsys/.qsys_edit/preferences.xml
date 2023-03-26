@@ -14,12 +14,12 @@
  <clocktable>
   <columns>
    <clockname preferredWidth="286" />
-   <clocksource preferredWidth="286" />
+   <clocksource preferredWidth="288" />
    <frequency preferredWidth="269" />
   </columns>
  </clocktable>
- <window width="1153" height="727" x="0" y="0" />
- <library expandedCategories="Library,Project" />
+ <window width="1160" height="727" x="-7" y="0" />
+ <library expandedCategories="Project,Library" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>

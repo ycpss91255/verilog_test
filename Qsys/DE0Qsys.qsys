@@ -145,35 +145,19 @@
          type = "String";
       }
    }
-   element sdram_ctrl.s1
-   {
-      datum baseAddress
-      {
-         value = "41943040";
-         type = "String";
-      }
-   }
-   element timer.s1
-   {
-      datum baseAddress
-      {
-         value = "0";
-         type = "String";
-      }
-   }
-   element hex0.s1
-   {
-      datum baseAddress
-      {
-         value = "32";
-         type = "String";
-      }
-   }
    element led.s1
    {
       datum baseAddress
       {
          value = "80";
+         type = "String";
+      }
+   }
+   element sdram_ctrl.s1
+   {
+      datum baseAddress
+      {
+         value = "41943040";
          type = "String";
       }
    }
@@ -190,6 +174,22 @@
       datum baseAddress
       {
          value = "48";
+         type = "String";
+      }
+   }
+   element hex0.s1
+   {
+      datum baseAddress
+      {
+         value = "32";
+         type = "String";
+      }
+   }
+   element timer.s1
+   {
+      datum baseAddress
+      {
+         value = "0";
          type = "String";
       }
    }
@@ -240,7 +240,7 @@
  <parameter name="projectName" value="" />
  <parameter name="sopcBorderPoints" value="false" />
  <parameter name="systemHash" value="1" />
- <parameter name="timeStamp" value="1678251967071" />
+ <parameter name="timeStamp" value="1679831498675" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
  <interface name="clk_50m" internal="clk_50m.clk_in" type="clock" dir="end" />
@@ -688,23 +688,23 @@
    name="button">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
+  <parameter name="captureEdge" value="true" />
   <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
+  <parameter name="edgeType" value="FALLING" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="true" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="3" />
+  <parameter name="width" value="2" />
   <parameter name="clockRate" value="10000000" />
  </module>
  <module kind="altera_avalon_pio" version="13.0.1.99.2" enabled="1" name="sw">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
-  <parameter name="captureEdge" value="false" />
+  <parameter name="captureEdge" value="true" />
   <parameter name="direction" value="Input" />
-  <parameter name="edgeType" value="RISING" />
+  <parameter name="edgeType" value="ANY" />
   <parameter name="generateIRQ" value="false" />
   <parameter name="irqType" value="LEVEL" />
   <parameter name="resetValue" value="0" />

@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2023/3/12 下午 02:30:05</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1678602605088</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2023/3/26 下午 08:31:44</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1679833904158</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>E:\SourceCode\verilog_test\Qsys\software\count_binary_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>E:\SourceCode\verilog_test\Qsys\DE0Qsys.sopcinfo</SopcDesignFile>

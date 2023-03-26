@@ -254,7 +254,7 @@ DE0Qsys u0 (
     .locked_export     (/* no use*/),
     .phasedone_export  (/* no use*/),
     .led_export        (LEDG),
-    .button_export     ({BUTTON[2], BUTTON[1], BUTTON[0]}),
+    .button_export     ({BUTTON[2], BUTTON[1]}),
     .sw_export         (SW),
     .hex0_export       ({HEX0_DP, HEX0_D})
 );

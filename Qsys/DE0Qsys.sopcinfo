@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="DE0Qsys" kind="DE0Qsys" version="1.0" fabric="QSYS">
  <!-- Format version 13.0sp1 232 (Future versions may contain additional information.) -->
- <!-- 2023.03.12.13:29:26 -->
+ <!-- 2023.03.26.20:31:01 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_GENERATION_ID">
   <type>java.lang.Integer</type>
-  <value>1678598966</value>
+  <value>1679833861</value>
   <derived>false</derived>
   <enabled>true</enabled>
   <visible>false</visible>
@@ -10763,11 +10763,11 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CAPTURE</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
-   <value>3</value>
+   <value>2</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DO_TEST_BENCH_WIRING</name>
@@ -10779,7 +10779,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.EDGE_TYPE</name>
-   <value>NONE</value>
+   <value>FALLING</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FREQ</name>
@@ -10813,7 +10813,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -10827,7 +10827,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="captureEdge">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -10843,9 +10843,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="edgeType">
    <type>java.lang.String</type>
-   <value>RISING</value>
+   <value>FALLING</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -10891,7 +10891,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="width">
    <type>int</type>
-   <value>3</value>
+   <value>2</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -10939,7 +10939,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_capture">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -10947,7 +10947,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_edge_type">
    <type>java.lang.String</type>
-   <value>NONE</value>
+   <value>FALLING</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -11422,6 +11422,24 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>2</width>
     <role>address</role>
+   </port>
+   <port>
+    <name>write_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>write_n</role>
+   </port>
+   <port>
+    <name>writedata</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>writedata</role>
+   </port>
+   <port>
+    <name>chipselect</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>chipselect</role>
    </port>
    <port>
     <name>readdata</name>
@@ -11471,7 +11489,7 @@ parameters are a RESULT of the module parameters. -->
    <port>
     <name>in_port</name>
     <direction>Input</direction>
-    <width>3</width>
+    <width>2</width>
     <role>export</role>
    </port>
   </interface>
@@ -11489,7 +11507,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.CAPTURE</name>
-   <value>0</value>
+   <value>1</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.DATA_WIDTH</name>
@@ -11505,7 +11523,7 @@ the requested settings for a module instance. -->
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.EDGE_TYPE</name>
-   <value>NONE</value>
+   <value>ANY</value>
   </assignment>
   <assignment>
    <name>embeddedsw.CMacro.FREQ</name>
@@ -11539,7 +11557,7 @@ the requested settings for a module instance. -->
    <type>boolean</type>
    <value>false</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -11553,7 +11571,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="captureEdge">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>false</derived>
    <enabled>true</enabled>
    <visible>true</visible>
@@ -11569,9 +11587,9 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="edgeType">
    <type>java.lang.String</type>
-   <value>RISING</value>
+   <value>ANY</value>
    <derived>false</derived>
-   <enabled>false</enabled>
+   <enabled>true</enabled>
    <visible>true</visible>
    <valid>true</valid>
   </parameter>
@@ -11665,7 +11683,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_capture">
    <type>boolean</type>
-   <value>false</value>
+   <value>true</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -11673,7 +11691,7 @@ the requested settings for a module instance. -->
   </parameter>
   <parameter name="derived_edge_type">
    <type>java.lang.String</type>
-   <value>NONE</value>
+   <value>ANY</value>
    <derived>true</derived>
    <enabled>true</enabled>
    <visible>false</visible>
@@ -12148,6 +12166,24 @@ parameters are a RESULT of the module parameters. -->
     <direction>Input</direction>
     <width>2</width>
     <role>address</role>
+   </port>
+   <port>
+    <name>write_n</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>write_n</role>
+   </port>
+   <port>
+    <name>writedata</name>
+    <direction>Input</direction>
+    <width>32</width>
+    <role>writedata</role>
+   </port>
+   <port>
+    <name>chipselect</name>
+    <direction>Input</direction>
+    <width>1</width>
+    <role>chipselect</role>
    </port>
    <port>
     <name>readdata</name>
@@ -14838,11 +14874,43 @@ parameters are a RESULT of the module parameters. -->
   <endConnectionPoint>reset</endConnectionPoint>
  </connection>
  <plugin>
-  <instanceCount>3</instanceCount>
-  <name>interrupt</name>
+  <instanceCount>1</instanceCount>
+  <name>altera_nios2_qsys</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Nios II Processor</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>11</instanceCount>
+  <name>avalon_slave</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Avalon Memory Mapped Slave</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>21</instanceCount>
+  <name>reset</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Interrupt Connection</displayName>
+  <displayName>Reset Connection</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>11</instanceCount>
+  <name>reset_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Reset Input</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>11</instanceCount>
+  <name>clock_sink</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Clock Input</displayName>
   <version>13.0</version>
  </plugin>
  <plugin>
@@ -14855,19 +14923,19 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>reset_source</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Reset Output</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
   <name>altpll</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
   <displayName>Avalon ALTPLL</displayName>
   <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>altera_avalon_dma</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>DMA Controller</displayName>
+  <version>13.0.1.99.2</version>
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
@@ -14883,6 +14951,22 @@ parameters are a RESULT of the module parameters. -->
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
   <displayName>Clock Output</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>altera_avalon_mm_bridge</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Avalon-MM Pipeline Bridge</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>reset_source</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Reset Output</displayName>
   <version>13.0</version>
  </plugin>
  <plugin>
@@ -14902,19 +14986,11 @@ parameters are a RESULT of the module parameters. -->
   <version>13.0</version>
  </plugin>
  <plugin>
-  <instanceCount>11</instanceCount>
-  <name>clock_sink</name>
+  <instanceCount>18</instanceCount>
+  <name>avalon</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Clock Input</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>11</instanceCount>
-  <name>avalon_slave</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Avalon Memory Mapped Slave</displayName>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Avalon Memory Mapped Connection</displayName>
   <version>13.0</version>
  </plugin>
  <plugin>
@@ -14926,62 +15002,6 @@ parameters are a RESULT of the module parameters. -->
   <version>13.0</version>
  </plugin>
  <plugin>
-  <instanceCount>18</instanceCount>
-  <name>avalon</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Avalon Memory Mapped Connection</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>altera_nios2_qsys</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Nios II Processor</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>8</instanceCount>
-  <name>conduit_end</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Conduit</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>interrupt_receiver</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Interrupt Receiver</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>11</instanceCount>
-  <name>reset_sink</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Reset Input</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>altera_avalon_timer</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Interval Timer</displayName>
-  <version>13.0.1.99.2</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>altera_avalon_mm_bridge</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Avalon-MM Pipeline Bridge</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
   <instanceCount>1</instanceCount>
   <name>altera_avalon_new_sdram_controller</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
@@ -14990,35 +15010,11 @@ parameters are a RESULT of the module parameters. -->
   <version>13.0.1.99.2</version>
  </plugin>
  <plugin>
-  <instanceCount>11</instanceCount>
-  <name>clock</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Clock Connection</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
   <instanceCount>1</instanceCount>
-  <name>clock_sink</name>
+  <name>reset_source</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Clock Input</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>21</instanceCount>
-  <name>reset</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IConnection</subtype>
-  <displayName>Reset Connection</displayName>
-  <version>13.0</version>
- </plugin>
- <plugin>
-  <instanceCount>1</instanceCount>
-  <name>clock_source</name>
-  <type>com.altera.entityinterfaces.IElementClass</type>
-  <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>Clock Source</displayName>
+  <displayName>Reset Output</displayName>
   <version>13.0</version>
  </plugin>
  <plugin>
@@ -15030,11 +15026,19 @@ parameters are a RESULT of the module parameters. -->
   <version>13.0</version>
  </plugin>
  <plugin>
+  <instanceCount>3</instanceCount>
+  <name>interrupt</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Interrupt Connection</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
   <instanceCount>1</instanceCount>
-  <name>altera_avalon_dma</name>
+  <name>altera_avalon_timer</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IModule</subtype>
-  <displayName>DMA Controller</displayName>
+  <displayName>Interval Timer</displayName>
   <version>13.0.1.99.2</version>
  </plugin>
  <plugin>
@@ -15047,10 +15051,42 @@ parameters are a RESULT of the module parameters. -->
  </plugin>
  <plugin>
   <instanceCount>1</instanceCount>
-  <name>reset_source</name>
+  <name>clock_sink</name>
   <type>com.altera.entityinterfaces.IElementClass</type>
   <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
-  <displayName>Reset Output</displayName>
+  <displayName>Clock Input</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>11</instanceCount>
+  <name>clock</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IConnection</subtype>
+  <displayName>Clock Connection</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>interrupt_receiver</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Interrupt Receiver</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>1</instanceCount>
+  <name>clock_source</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IModule</subtype>
+  <displayName>Clock Source</displayName>
+  <version>13.0</version>
+ </plugin>
+ <plugin>
+  <instanceCount>8</instanceCount>
+  <name>conduit_end</name>
+  <type>com.altera.entityinterfaces.IElementClass</type>
+  <subtype>com.altera.entityinterfaces.IMutableConnectionPoint</subtype>
+  <displayName>Conduit</displayName>
   <version>13.0</version>
  </plugin>
  <reportVersion>13.0sp1 232</reportVersion>

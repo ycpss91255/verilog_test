@@ -1,24 +1,22 @@
-/* ���剖�頦@: LED���剖�頦���剖�? */
-#include <io.h>     /* �楠���背/O��撘�蝺�/
-#include <stdio.h>  /* �楠��璅��貉X����撘�蝺�*/
-#include <system.h> /* �楠���賢��楨 */
-#include <unistd.h> /* ����usleep ���剖�? */
-#include <string.h> /* �����剛�渲w */
-#include <stdint.h> /* �狗���詨��祈���楨 */
-#include <stdbool.h>/* ���剖��文�頦����撘�蝺�*/
+#include <io.h> 	/* 系統I/O函式庫*/
+#include <stdio.h> 	/* 系統標準輸出入函式庫 */
+#include <system.h> /* 系統函式庫 */
+#include <unistd.h> /* 宣告usleep函數 */
+#include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
 
 void button_func();
-void hex_func();
+int hex_func();
 
 int main() {
-  int button, sw;
+  int button, sw, hex_num = 0;
   printf("hello nios II\n");
   while (1) {
-    button = IORD(BUTTON_BASE, 0);
-    sw = IORD(SW_BASE, 0);
-
+    button = IORD(BUTTON_BASE, 3);
+    sw = IORD(SW_BASE, 3);
     button_func(button);
-    hex_func(sw);
+    hex_num = hex_func(hex_num, sw, button);
   }
   return 0;
 }
@@ -26,13 +24,15 @@ int main() {
 void button_func(int button) {
   int i, j;
   // BUTTON 1
-  if (!((button >> 1) & 0x01)) {
+  if (button & 0x01) {
+    IOWR(BUTTON_BASE, 3, 0);
     printf("hello 810440023\n");
-    usleep(50000);
   }
 
   // BUTTON 2
-  if (!((button >> 2) & 0x1)) {
+  if ((button >> 1) & 0x1) {
+//  if ((button & 0x2) {
+	IOWR(BUTTON_BASE, 3, 0);
     /* LED left shift */
     for (i = 0; i < 2; i++) {
       for (j = 0; j < 10; j++) {
@@ -50,8 +50,8 @@ void button_func(int button) {
   }
 }
 
-void hex_func(int num){
-  unsigned char segments[16] = {
+int hex_func(int num, int sw, int button){
+  uint8_t segments[16] = {
       0x3F, // 0 0b0011 1111
       0x06, // 1 0b0000 0110
       0x5B, // 2 0b0101 1011
@@ -69,7 +69,19 @@ void hex_func(int num){
       0x79, // E 0b0111 1001
       0x71  // F 0b0111 0001
   };
+  if (sw) {
+    IOWR(SW_BASE, 3, 0);
+    num = (sw & 0x0F) ? (IORD(SW_BASE,0) & 0x0F) : num;
+  }
+  if (button & 0x01) {
+	IOWR(BUTTON_BASE, 3, 0);
+	num = (num >= 0x0F) ? 0 : num+1;
 
-  num = num & 0x0F;
+  }else if ((button >> 1) & 0x01) {
+	IOWR(BUTTON_BASE, 3, 0);
+	num = (num == 0x00) ? 0x0F : num-1;
+  }
   IOWR(HEX0_BASE, 0, ~segments[num]);
+
+  return num;
 }
