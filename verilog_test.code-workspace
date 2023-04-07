@@ -9,6 +9,12 @@
 			"*.gazebo": "xml",
 			"io.h": "c",
 			"system.h": "c"
-		}
+		},
+	},
+	"extensions": {
+		"recommendations": [
+			"czh.czh-verilog-snippet",
+			"teros-technology.teroshdl"
+		]
 	}
 }
