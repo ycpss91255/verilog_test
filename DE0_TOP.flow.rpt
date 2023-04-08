@@ -1,5 +1,5 @@
 Flow report for DE0_TOP
-Sun Mar 26 20:32:19 2023
+Sat Apr 08 12:06:11 2023
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -40,20 +40,20 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Flow Summary                                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Flow Status                        ; Successful - Sun Mar 26 20:32:15 2023           ;
+; Flow Status                        ; Successful - Sat Apr 08 12:06:06 2023           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; DE0_TOP                                         ;
 ; Top-level Entity Name              ; DE0_TOP                                         ;
 ; Family                             ; Cyclone III                                     ;
 ; Device                             ; EP3C16F484C6                                    ;
 ; Timing Models                      ; Final                                           ;
-; Total logic elements               ; 5,450 / 15,408 ( 35 % )                         ;
-;     Total combinational functions  ; 4,401 / 15,408 ( 29 % )                         ;
-;     Dedicated logic registers      ; 3,627 / 15,408 ( 24 % )                         ;
-; Total registers                    ; 3695                                            ;
+; Total logic elements               ; 5,383 / 15,408 ( 35 % )                         ;
+;     Total combinational functions  ; 4,461 / 15,408 ( 29 % )                         ;
+;     Dedicated logic registers      ; 3,542 / 15,408 ( 23 % )                         ;
+; Total registers                    ; 3610                                            ;
 ; Total pins                         ; 252 / 347 ( 73 % )                              ;
 ; Total virtual pins                 ; 0                                               ;
-; Total memory bits                  ; 35,840 / 516,096 ( 7 % )                        ;
+; Total memory bits                  ; 16,640 / 516,096 ( 3 % )                        ;
 ; Embedded Multiplier 9-bit elements ; 0 / 112 ( 0 % )                                 ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                                  ;
 +------------------------------------+-------------------------------------------------+
@@ -64,60 +64,60 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/26/2023 20:31:39 ;
+; Start date & time ; 04/08/2023 10:37:00 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE0_TOP             ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                                                                                               ;
-+-------------------------------------+---------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; Assignment Name                     ; Value                                                                                                   ; Default Value ; Entity Name ; Section Id       ;
-+-------------------------------------+---------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
-; COMPILER_SIGNATURE_ID               ; 49410873951347.167983389919972                                                                          ; --            ; --          ; --               ;
-; ENABLE_ADVANCED_IO_TIMING           ; On                                                                                                      ; --            ; --          ; --               ;
-; ENABLE_SIGNALTAP                    ; On                                                                                                      ; --            ; --          ; --               ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                      ; --            ; --          ; --               ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                       ; --            ; --          ; --               ;
-; MISC_FILE                           ; D:/TERASIC_TEST/DE0/DE0_TOP/DE0_TOP.dpf                                                                 ; --            ; --          ; --               ;
-; MISC_FILE                           ; E:/DE0/DE0_TOP/DE0_TOP.dpf                                                                              ; --            ; --          ; --               ;
-; MISC_FILE                           ; D:/project/TW/de0/trunk/cd/v.1.1/DE0_TOP_New/DE0_TOP.dpf                                                ; --            ; --          ; --               ;
-; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                                                    ; --            ; --          ; --               ;
-; PARTITION_COLOR                     ; 14622752                                                                                                ; --            ; --          ; Top              ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                                                   ; --            ; --          ; Top              ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                                  ; --            ; --          ; Top              ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                     ; --            ; --          ; --               ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                   ; --            ; --          ; --               ;
-; SEARCH_PATH                         ; .\qsys\de0qsys\synthesis                                                                                ; --            ; --          ; --               ;
-; SEARCH_PATH                         ; .\qsys\de0qsys\synthesis\submodules                                                                     ; --            ; --          ; --               ;
-; SLD_FILE                            ; E:/SourceCode/verilog_test/hw3_auto_stripped.stp                                                        ; --            ; --          ; --               ;
-; SLD_NODE_CREATOR_ID                 ; 110                                                                                                     ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                                 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                                  ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=1024                                                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                              ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                                          ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                                       ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                                  ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                            ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                                     ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=1024                                                                                   ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                                                ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                    ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                            ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                           ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=20                                                                                        ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=20                                                                                     ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=84                                                                            ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=55557                                                                               ; --            ; --          ; auto_signaltap_0 ;
-; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=61267                                                                               ; --            ; --          ; auto_signaltap_0 ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                                                                                     ; --            ; --          ; eda_palace       ;
-; USE_SIGNALTAP_FILE                  ; hw3.stp                                                                                                 ; --            ; --          ; --               ;
-+-------------------------------------+---------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                                                                                                           ;
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; Assignment Name                     ; Value                                                                                                                                               ; Default Value ; Entity Name ; Section Id       ;
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
+; COMPILER_SIGNATURE_ID               ; 49410873951347.168092141900860                                                                                                                      ; --            ; --          ; --               ;
+; ENABLE_ADVANCED_IO_TIMING           ; On                                                                                                                                                  ; --            ; --          ; --               ;
+; ENABLE_SIGNALTAP                    ; On                                                                                                                                                  ; --            ; --          ; --               ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                                                                                                                                  ; --            ; --          ; --               ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                                                                                                                                   ; --            ; --          ; --               ;
+; MISC_FILE                           ; D:/TERASIC_TEST/DE0/DE0_TOP/DE0_TOP.dpf                                                                                                             ; --            ; --          ; --               ;
+; MISC_FILE                           ; E:/DE0/DE0_TOP/DE0_TOP.dpf                                                                                                                          ; --            ; --          ; --               ;
+; MISC_FILE                           ; D:/project/TW/de0/trunk/cd/v.1.1/DE0_TOP_New/DE0_TOP.dpf                                                                                            ; --            ; --          ; --               ;
+; NOMINAL_CORE_SUPPLY_VOLTAGE         ; 1.2V                                                                                                                                                ; --            ; --          ; --               ;
+; PARTITION_COLOR                     ; 14622752                                                                                                                                            ; --            ; --          ; Top              ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                                                                                                                               ; --            ; --          ; Top              ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                                                                                                                              ; --            ; --          ; Top              ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                                                                                                                                 ; --            ; --          ; --               ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW                                                                                                               ; --            ; --          ; --               ;
+; SEARCH_PATH                         ; .\qsys\de0qsys\synthesis                                                                                                                            ; --            ; --          ; --               ;
+; SEARCH_PATH                         ; .\qsys\de0qsys\synthesis\submodules                                                                                                                 ; --            ; --          ; --               ;
+; SLD_FILE                            ; E:/SourceCode/verilog_test/hw4_auto_stripped.stp                                                                                                    ; --            ; --          ; --               ;
+; SLD_NODE_CREATOR_ID                 ; 110                                                                                                                                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_ENTITY_NAME                ; sld_signaltap                                                                                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_INFO=805334528                                                                                                                             ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_POWER_UP_TRIGGER=0                                                                                                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STORAGE_QUALIFIER_INVERSION_MASK_LENGTH=0                                                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ATTRIBUTE_MEM_MODE=OFF                                                                                                                          ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_FLOW_USE_GENERATED=0                                                                                                                      ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_STATE_BITS=11                                                                                                                                   ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_BUFFER_FULL_STOP=1                                                                                                                              ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_CURRENT_RESOURCE_WIDTH=1                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL=1                                                                                                                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_IN_ENABLED=0                                                                                                                            ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ADVANCED_TRIGGER_ENTITY=basic,1,                                                                                                                ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_LEVEL_PIPELINE=1                                                                                                                        ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_ENABLE_ADVANCED_TRIGGER=0                                                                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SEGMENT_SIZE=4096                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_SAMPLE_DEPTH=4096                                                                                                                               ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_DATA_BITS=34                                                                                                                                    ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_TRIGGER_BITS=34                                                                                                                                 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK=00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_INVERSION_MASK_LENGTH=128                                                                                                                       ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_HIWORD=32309                                                                                                                           ; --            ; --          ; auto_signaltap_0 ;
+; SLD_NODE_PARAMETER_ASSIGNMENT       ; SLD_NODE_CRC_LOWORD=64961                                                                                                                           ; --            ; --          ; auto_signaltap_0 ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                                                                                                                                 ; --            ; --          ; eda_palace       ;
+; USE_SIGNALTAP_FILE                  ; hw4.stp                                                                                                                                             ; --            ; --          ; --               ;
++-------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------+---------------+-------------+------------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -125,11 +125,51 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 4861 MB             ; 00:00:03                           ;
-; Fitter                    ; 00:00:15     ; 1.8                     ; 5784 MB             ; 00:00:04                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4583 MB             ; 00:00:00                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4782 MB             ; 00:00:01                           ;
-; Total                     ; 00:00:37     ; --                      ; --                  ; 00:00:08                           ;
+; Analysis & Synthesis      ; 00:00:20     ; 1.0                     ; 4850 MB             ; 00:00:04                           ;
+; Fitter                    ; 00:00:18     ; 1.6                     ; 5805 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4580 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4801 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 4838 MB             ; 00:00:06                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:15     ; 1.2                     ; 5799 MB             ; 00:00:06                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:01                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4779 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 4846 MB             ; 00:00:05                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:14     ; 2.6                     ; 5803 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 4.7                     ; 4779 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:16     ; 1.0                     ; 4850 MB             ; 00:00:06                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4641 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:15     ; 1.7                     ; 5795 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4779 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 4841 MB             ; 00:00:07                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4637 MB             ; 00:00:01                           ;
+; Fitter                    ; 00:00:14     ; 1.0                     ; 5801 MB             ; 00:00:07                           ;
+; Assembler                 ; 00:00:02     ; 1.0                     ; 4587 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4779 MB             ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:09     ; 1.0                     ; 4818 MB             ; 00:00:03                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4657 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 5767 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4576 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4788 MB             ; 00:00:02                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4827 MB             ; 00:00:03                           ;
+; Partition Merge           ; 00:00:02     ; 1.0                     ; 4661 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:13     ; 1.0                     ; 5763 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4781 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 4823 MB             ; 00:00:02                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4658 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:11     ; 1.0                     ; 5759 MB             ; 00:00:04                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 4776 MB             ; 00:00:01                           ;
+; Analysis & Synthesis      ; 00:00:21     ; 1.0                     ; 4866 MB             ; 00:00:05                           ;
+; Partition Merge           ; 00:00:01     ; 1.0                     ; 4641 MB             ; 00:00:00                           ;
+; Fitter                    ; 00:00:17     ; 2.4                     ; 5799 MB             ; 00:00:05                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4583 MB             ; 00:00:00                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4788 MB             ; 00:00:01                           ;
+; Total                     ; 00:05:10     ; --                      ; --                  ; 00:01:44                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -142,6 +182,46 @@ applicable agreement for further details.
 ; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
 ; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
 ; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Analysis & Synthesis      ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Partition Merge           ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Fitter                    ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; Assembler                 ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
+; TimeQuest Timing Analyzer ; cyc_desktop      ; Windows 7 ; 6.2        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
@@ -149,6 +229,46 @@ applicable agreement for further details.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
+quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_sta DE0_TOP -c DE0_TOP
+quartus_map --read_settings_files=on --write_settings_files=off DE0_TOP -c DE0_TOP
+quartus_cdb --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP --merge=on
 quartus_fit --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
 quartus_asm --read_settings_files=off --write_settings_files=off DE0_TOP -c DE0_TOP
 quartus_sta DE0_TOP -c DE0_TOP

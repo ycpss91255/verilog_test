@@ -1,0 +1,15 @@
+#include <io.h> 	/* 系統I/O函式庫*/
+#include <stdio.h> 	/* 系統標準輸出入函式庫 */
+#include <system.h> /* 系統函式庫 */
+#include <unistd.h> /* 宣告usleep函數 */
+#include <string.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+int main() {
+  printf("hello nios II\n");
+  while (1) {
+
+  }
+  return 0;
+}

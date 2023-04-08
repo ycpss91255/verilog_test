@@ -13,13 +13,14 @@
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="286" />
-   <clocksource preferredWidth="288" />
-   <frequency preferredWidth="269" />
+   <clockname preferredWidth="289" />
+   <clocksource preferredWidth="289" />
+   <frequency preferredWidth="271" />
   </columns>
  </clocktable>
- <window width="1160" height="727" x="-7" y="0" />
- <library expandedCategories="Project,Library" />
+ <window width="1161" height="728" x="1139" y="719" />
+ <library
+   expandedCategories="Library/Peripherals/Microcontroller Peripherals,Project,Library,Library/Peripherals" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>
