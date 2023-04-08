@@ -3,6 +3,7 @@
 	<name>hw4</name>
 	<comment></comment>
 	<projects>
+		<project>hw4_bsp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

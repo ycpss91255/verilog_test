@@ -1,7 +1,7 @@
 module pwm_gen(
         input clk_i,
         input rst_n_i,
-        input [2:0] duty_i,
+        input [8:0] duty_i,
         output pwm_o
     );
 
@@ -12,7 +12,7 @@ module pwm_gen(
             cnt_r <= 0;
         end
         else begin
-            cnt_r <= (cnt_r == 7) ? 0 : cnt_r + 1;
+            cnt_r <= (cnt_r == 255) ? 0 : cnt_r + 1;
         end
     end
 
