@@ -19,7 +19,8 @@
   </columns>
  </clocktable>
  <window width="1293" height="727" x="3433" y="-2" />
- <library expandedCategories="Project,Library" />
+ <library
+   expandedCategories="Library,Library/Peripherals/Microcontroller Peripherals,Project,Library/Peripherals" />
  <generation block_symbol_file="0" />
  <hdlexample language="VERILOG" />
 </preferences>

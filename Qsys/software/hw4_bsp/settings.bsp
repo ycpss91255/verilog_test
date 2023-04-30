@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>2023/4/8 下午 05:17:20</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1680945440869</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>2023/4/30 下午 04:30:29</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1682843429186</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>E:\SourceCode\verilog_test\Qsys\software\hw4_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>E:\SourceCode\verilog_test\Qsys\DE0Qsys.sopcinfo</SopcDesignFile>
@@ -869,62 +869,68 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>hex_1</slaveDescriptor>
+                <slaveDescriptor>sensor</slaveDescriptor>
                 <addressRange>0x01000020 - 0x0100002F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>motorB_dir</slaveDescriptor>
+                <slaveDescriptor>hex_1</slaveDescriptor>
                 <addressRange>0x01000030 - 0x0100003F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>motorA_dir</slaveDescriptor>
+                <slaveDescriptor>motorB_dir</slaveDescriptor>
                 <addressRange>0x01000040 - 0x0100004F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>motorB_duty</slaveDescriptor>
+                <slaveDescriptor>motorA_dir</slaveDescriptor>
                 <addressRange>0x01000050 - 0x0100005F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>motorA_duty</slaveDescriptor>
+                <slaveDescriptor>motorB_duty</slaveDescriptor>
                 <addressRange>0x01000060 - 0x0100006F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>hex_0</slaveDescriptor>
+                <slaveDescriptor>motorA_duty</slaveDescriptor>
                 <addressRange>0x01000070 - 0x0100007F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>sw</slaveDescriptor>
+                <slaveDescriptor>hex_0</slaveDescriptor>
                 <addressRange>0x01000080 - 0x0100008F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>button</slaveDescriptor>
+                <slaveDescriptor>sw</slaveDescriptor>
                 <addressRange>0x01000090 - 0x0100009F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>led</slaveDescriptor>
+                <slaveDescriptor>button</slaveDescriptor>
                 <addressRange>0x010000A0 - 0x010000AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>led</slaveDescriptor>
+                <addressRange>0x010000B0 - 0x010000BF</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>jtag_uart</slaveDescriptor>
-                <addressRange>0x010000B0 - 0x010000B7</addressRange>
+                <addressRange>0x010000C0 - 0x010000C7</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

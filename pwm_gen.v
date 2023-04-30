@@ -1,11 +1,11 @@
 module pwm_gen(
         input clk_i,
         input rst_n_i,
-        input [8:0] duty_i,
+        input [7:0] duty_i,
         output pwm_o
     );
 
-    reg [8:0] cnt_r;
+    reg [7:0] cnt_r;
 
     always @(posedge clk_i or negedge rst_n_i) begin
         if (!rst_n_i) begin

@@ -203,7 +203,7 @@ module DE0_TOP (
     //=======================================================
 
     wire [2:0]  BUTTON; // Button after debounce
-    wire        clk_256hz_w;
+    wire        clk_2560kHz_w;
 
     wire [1:0]  motora_dir_w;
     wire [7:0]  motora_duty_w;
@@ -267,35 +267,29 @@ module DE0_TOP (
                 .hex_0_export       ({HEX0_DP, HEX0_D}),
                 .hex_1_export       ({HEX1_DP, HEX1_D}),
                 // .led_export        (LEDG),
+                .sensor_export      ({GPIO0_D[30], GPIO0_D[28], GPIO0_D[26]}),
                 .motora_dir_export  (motora_dir_w),
                 .motora_duty_export (motora_duty_w),
                 .motorb_dir_export  (motorb_dir_w),
                 .motorb_duty_export (motorb_duty_w)
             );
 
-    divisor #(.Threshold(390625)) // 256Hz => 8 bit 1 Hz PWM clock
-            clk_2P048K (
+    divisor #(.Threshold(9))
+            clk_2560kHz (
                 .clk_i(CLOCK_50),
                 .rst_n_i(BUTTON[0]),
-                .clk_o()
-            );
-
-    divisor #(.Threshold(97656)) // 8Hz => 3 bit 1 Hz PWM clock
-            clk_256hz (
-                .clk_i(CLOCK_50),
-                .rst_n_i(BUTTON[0]),
-                .clk_o(clk_256hz_w)
+                .clk_o(clk_2560kHz_w)
             );
 
     pwm_gen motora_pwm (
-                .clk_i(clk_256hz_w),
+                .clk_i(clk_2560kHz_w),
                 .rst_n_i(BUTTON[0]),
                 .duty_i(motora_duty_w),
                 .pwm_o(motora_pwm_w)
             );
 
     pwm_gen motorb_pwm (
-                .clk_i(clk_256hz_w),
+                .clk_i(clk_2560kHz_w),
                 .rst_n_i(BUTTON[0]),
                 .duty_i(motorb_duty_w),
                 .pwm_o(motorb_pwm_w)
@@ -304,11 +298,12 @@ module DE0_TOP (
 
     assign LEDG[1:0] = motora_dir_w;
     assign LEDG[2] = motora_pwm_w;
-
-    // assign LEDG[1:0] = motorb_dir_w;
-    // assign LEDG[2] = motorb_pwm_w;
+    assign {GPIO0_D[3], GPIO0_D[1]} = motora_dir_w;
+    assign GPIO0_D[0] = motora_pwm_w;
 
     assign LEDG[9:8] = motorb_dir_w;
     assign LEDG[7] = motorb_pwm_w;
+    assign {GPIO1_D[3], GPIO1_D[1]} = motorb_dir_w;
+    assign GPIO1_D[0] = motorb_pwm_w;
 
 endmodule
